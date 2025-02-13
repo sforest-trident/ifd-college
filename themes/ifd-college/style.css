@@ -1,0 +1,429 @@
+/**
+ * Theme Name:        IFD College
+ * Description:       Theme for IFD College
+ * Version:           1.0.0
+ * Author:            Trident Marketing Anglia Ltd
+ * Author URI:        https://tridentmarketinguk.com
+ * Tags:              classic
+ * Text Domain:       ifdc
+ * Domain Path:       /assets/lang
+ * Tested up to:      6.7
+ * Requires at least: 6.7
+ * Requires PHP:      8.1
+ * License:           GNU General Public License v2.0 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/* Global Font Variables */
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root {
+    --e-global-color-primary: #1D3E07;
+    --e-global-color-secondary: #54595F;
+    --e-global-color-text: #000000;
+    --e-global-color-accent: #50991F;
+    --e-global-color-white: #FFFFFF;
+    --e-global-color-c64abec: #6CC135;
+    --e-global-typography-primary-font-family: "Nunito";
+    --e-global-typography-primary-font-weight: 600;
+    --e-global-typography-secondary-font-family: "Nunito";
+    --e-global-typography-secondary-font-weight: 400;
+    --e-global-typography-text-font-family: "Nunito";
+    --e-global-typography-text-font-weight: 400;
+    --e-global-typography-accent-font-family: "Nunito";
+    --e-global-typography-accent-font-weight: 500;
+}
+
+/* Body Font */
+body {
+    font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+    font-size: 20px;
+    font-weight: var(--e-global-typography-primary-font-weight);
+    line-height: 31px;
+    background-color: #EAEAEA95;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Widgets */
+.header-widgets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 99999;
+}
+.header-widgets.scrolled {
+    background-color: #f3f3f3;
+}
+
+.header-widget-area {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-widget img {
+    width: 205px;
+    height: auto;
+}
+
+.menu-header-container {
+    flex-grow: 1;
+}
+
+.menu-header-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-header-container ul li {
+    margin: 0 20px;
+}
+
+.menu-header-container ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.wp-block-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 125px;
+}
+
+#page-title .wp-block-button__link{
+    line-height: 1.3em;
+    font-size: 40px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+.wp-block-button__link {
+    width: 100%;
+    text-align: center;
+}
+
+.wp-block-columns {
+    max-width: 1400px!important;
+    margin: 0 auto!important;
+}
+
+/* Footer Widgets */
+footer {
+    background-color: var(--e-global-color-accent);
+    width: 100%!important;
+    margin: 0px!important;
+    padding: 50px 0 0 0!important;
+}
+.footer-widgets {
+    background-color: var(--e-global-color-accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: "Nunito", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--e-global-color-white);
+}
+
+.footer-widget-area {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-widget img {
+    height: 125px!important;
+    width: auto;
+}
+
+.footer-widget p {
+    color: #fff;
+}
+
+.footer-widget p.copyright {
+    font-size: 14px;
+    line-height: 19px;
+}
+
+/* Header and Footer Navigation Font */
+.header-nav-menu a,
+.footer-nav-menu a,
+.footer-widget a {
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+
+.header-nav-menu a:hover,
+.menu-header-container ul li a:hover,
+.menu-header-container ul li.current-menu-item a {
+    color: var(--e-global-color-accent) !important;
+}
+
+/* Footer Menu */
+.menu-footer-container {
+    text-align: right;
+}
+
+.menu-footer-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.menu-footer-container ul li {
+    margin-bottom: 0px;
+}
+
+.menu-footer-container ul li a {
+    color: var(--e-global-color-white);
+    fill: var(--e-global-color-white);
+    padding: 1px 0;
+    text-decoration: none;
+}
+
+.menu-footer-container ul li a:hover,
+.menu-footer-container ul li.current-menu-item a {
+    color: #000000;
+}
+
+/* Button Styles */
+.wp-block-buttons.is-layout-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wp-block-button {
+    display: inline-flex;
+}
+
+.wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--e-global-color-accent);
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--e-global-color-accent);
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+    color: var(--e-global-color-accent);
+    background-color: var(--e-global-color-white);
+    border-color: var(--e-global-color-accent);
+}
+
+#home-page-top {
+    height: 150vh;
+    margin-right: 174px;
+}
+
+#page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    height: calc(100vh - 123px);
+    margin: -123px 0 123px 0
+}
+
+#page-title {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 400px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#page-thumbnail {
+    flex: 1;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 9999;
+}
+
+h1 {
+    font-family: "Nunito", Sans-serif;
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+[class^="stmlms-"], 
+[class*=" stmlms-"] {
+    font-weight: 900;
+}
+.stm_searchbox {
+    margin: 0px!important;
+    background-color: #50991F!important;
+    border: 1px solid #50991F!important;
+    border-radius: 50px!important;
+    padding: 10px 10px 10px 50px;
+    max-width: 450px!important;
+    
+}
+.stm_searchbox .stm_lms_courses_search {
+    max-width: none!important;
+    margin: 10px 10px 10px 50px;
+}
+.stm_searchbox .stm_lms_courses_search__button {
+    right: unset;
+    left: -45px!important;
+    color: #FFFFFF!important;
+    font-size: 30px!important;
+    font-weight: 900!important;
+}
+.stm_searchbox .stm_lms_courses_search .autocomplete-wrapper .autocomplete-input {
+    padding: 10px!important;
+    border: 1px solid #50991F!important;
+    border-radius: 50px!important;
+    
+}
+
+/* Center the taxonomy filter */
+#homepage .wp-block-masterstudy-courses-categories-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#homepage .lms-courses-category-list {
+	align-items: center;
+}
+#homepage .lms-courses-category-list__item {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+	border-radius: 100px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+	position: relative; /* Required for 'top' to work */
+    transition: top 0.3s ease-in-out; /* Smooth animation */
+}
+
+#homepage .lms-courses-category-list__item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: transparent!important;
+    border: none!important;
+	padding: 0px;
+	overflow: unset;
+}
+#homepage .lms-courses-category-list__item:hover{
+	top: -40px; /* Move up */
+}
+
+#homepage .lms-courses-category-list__item a span {
+	overflow: unset!important;
+	white-space: unset!important;
+	color: white;
+	font-family: 'nunito', sans-serif;
+	font-size: 18px;
+	line-height: 21px;
+	text-transform: uppercase;	
+}
+
+#homepage .lms-courses-category-list__item  a:hover span{
+    color: #000000!important;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(1) {
+    background-color: #80D649!important;
+	height: 400px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(2) {
+    background-color: #6CC136!important;
+	height: 469px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(3) {
+    background-color: #539B25!important;
+	height: 538px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(4) {
+    background-color: #46861D!important;
+	height: 609px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(5) {
+    background-color: #386C17!important;
+	height: 676px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(6) {
+    background-color: #227AFF!important;
+	height: 609px;
+	margin-left: 20px;
+}
+
+
+/* Hover effect */
+#homepage .lms-courses-category-list__item:hover {
+    filter: brightness(90%);
+    color: #000000!important;
+}
+
+#news {
+    background-color: #1D3E07;
+    padding: 50px 0px;
+}
+#news p {
+    color: #fff;
+    padding: 20px 0 0 0;
+    max-width: 50%;
+}
+.white-back {
+    width: calc(100vw-2em);
+    left: 0;
+    position: absolute;
+    margin: 0;
+    padding: 50px;
+}
+.white-back.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#testimonials {
+    background-color: rgba( 29, 62, 7, 1 );
+}
+#testimonials .wp-block-toolset-views-view-editor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#testimonials .wpv-pagination-previous-next-buttons {
+    margin: 0 -80px;
+}
