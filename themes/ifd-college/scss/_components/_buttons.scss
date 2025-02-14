@@ -1,0 +1,56 @@
+﻿a,
+button{
+	-webkit-tap-highlight-color: transparent;
+}
+
+button{
+	background-color: unset;
+	border: unset;
+}  
+
+.cta-block{
+	display: block;
+}
+
+.cta {
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+
+	border: 2px solid #fff;
+	text-transform: uppercase;
+	padding: 0.5rem;
+	border-radius: 3px;
+	font-size: 12px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	
+	@include breakpoint($md-down){
+		padding: 0.75rem 0.5rem;
+	}
+
+	@include breakpoint($md){
+		width: 100%;
+		max-width: 200px;
+		padding: 1rem;
+		font-size: 13px;
+	}
+}
+
+@mixin btn($bg-colour, $text-colour, $border-colour: transparent, $text-hover-colour: $bg-colour, $bg-hover-colour: $text-colour, $border-weight: 2px, $transition: all 400ms cubic-bezier(0.39,0.5,0.15,1.36)){
+	background-color: $bg-colour;
+	color: $text-colour;
+
+	border: $border-weight solid $border-colour;
+	transition: $transition;
+
+	&:hover{
+		color: $text-hover-colour;
+		background-color: $bg-hover-colour;
+	}
+}
+
+
+

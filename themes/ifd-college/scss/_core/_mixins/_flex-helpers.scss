@@ -1,0 +1,45 @@
+﻿@mixin _flex-helpers($prefix: '.') {
+	#{if(&, '&', '')}#{$prefix}flex {
+
+		&-row {
+			flex-direction: row !important;
+		}
+
+		&-column {
+			flex-direction: column !important;
+		}
+
+		&-basis-100 {
+			flex-basis: 100% !important;
+		}
+
+		&-center-all {
+			align-items: center;
+			justify-content: center;
+		}
+
+		&-wrap {
+			flex-wrap: wrap;
+		}
+	}
+
+	#{if(&, '&', '')}#{$prefix}justify-content {
+		&-between {
+			justify-content: space-between !important;
+		}
+
+		&-center {
+			justify-content: center !important;
+		}
+
+		&-start {
+			justify-content: flex-start !important;
+		}
+	}
+
+	#{if(&, '&', '')}#{$prefix}align-items {
+		&-center {
+			align-items: center !important;
+		}
+	}
+}

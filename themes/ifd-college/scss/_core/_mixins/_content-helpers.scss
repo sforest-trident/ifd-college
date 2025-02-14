@@ -1,0 +1,52 @@
+﻿@mixin hidden() {
+	display: none !important;
+}
+
+@mixin unhidden() {
+	display: unset;
+}
+
+@mixin _line-break() {
+	display: block !important;
+}
+
+
+
+//  Min-height loop mixin
+@mixin _mh() {
+	@each $iteration in $min-height-iterations {
+		&-#{$iteration} {
+			min-height: #{$iteration}rem;
+		}
+	}
+}
+
+
+// Max-width loop mixin
+@mixin _mw() {
+	@each $iteration in $max-width-iterations {
+		&-#{$iteration} {
+			max-width: #{$iteration}rem;
+		}
+	}
+}
+
+
+
+@mixin _content-helper-classes($prefix: '') {
+	#{if(&, '&', '')}#{$prefix}line-break {
+		@include _line-break();
+	}
+
+	#{if(&, '&', '')}#{$prefix}hidden {
+		@include hidden();
+	}
+	// Max Height
+	#{if(&, '&', '')}#{$prefix}mh {
+		@include _mh();
+	}
+	// Max-width
+	#{if(&, '&', '')}#{$prefix}mw {
+		@include _mw();
+	}
+}

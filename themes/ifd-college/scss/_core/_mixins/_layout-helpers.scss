@@ -1,0 +1,16 @@
+@mixin container(){
+    @include breakpoint($md-down) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	@include breakpoint($md) {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	@include breakpoint($xxl) {
+		padding-top: 3vw;
+		padding-right: 3vw;
+	}
+}

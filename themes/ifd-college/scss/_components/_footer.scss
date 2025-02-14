@@ -1,0 +1,17 @@
+﻿footer {
+
+
+	.backTop {
+		position: absolute;
+
+		@include breakpoint($md-down) {
+			bottom: 10rem;
+			right: 1rem;
+		}
+
+		@include breakpoint($md) {
+			bottom: 8rem;
+			right: 2rem;
+		}
+	}
+}

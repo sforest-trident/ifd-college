@@ -1,0 +1,30 @@
+﻿@mixin _bg-colours($prefix: '.') {
+	@each $colour-name, $colour-value in $site-colours {
+		#{if(&, '&', '')}#{$prefix}bg {
+			&-#{$colour-name} {
+				background-color: $colour-value;
+			}
+		}
+	}
+}
+
+
+@mixin _text-colours($prefix: '.') {
+	@each $colour-name, $colour-value in $site-colours {
+		#{if(&, '&', '')}#{$prefix}text {
+			&-#{$colour-name} {
+				color: $colour-value !important;
+			}
+		}
+	}
+}
+
+@mixin _stroke-colours($prefix: '.') {
+	@each $colour-name, $colour-value in $site-colours {
+		#{if(&, '&', '')}#{$prefix}stroke {
+			&-#{$colour-name} {
+				stroke: $colour-value;
+			}
+		}
+	}
+}

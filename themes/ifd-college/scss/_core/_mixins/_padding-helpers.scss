@@ -1,0 +1,61 @@
+﻿@mixin _padding($axis: false) {
+	//$spacing-iterations
+	@each $iteration in $spacing-iterations {
+
+		&-#{$iteration} {
+			// If axis is set apply to that axis only
+			@if($axis) {
+				padding-#{$axis}: #{$iteration}rem !important;
+			}
+			// otherwise apply to all axis'
+			@else {
+				padding: #{$iteration}rem !important;
+			}
+		}
+	}
+}
+
+
+// Axis-based helpers
+@mixin padding-y($top: $value, $bottom: $top) {
+	padding-top: $top;
+	padding-bottom: $bottom;
+}
+
+@mixin padding-x($value) {
+	padding-left: $value;
+	padding-right: $value;
+}
+
+
+@mixin _all-paddings($prefix: '') {
+	#{if(&, '&', '')}#{$prefix}p {
+		@include _padding();
+	}
+	// Padding-top only ---
+	#{if(&, '&', '')}#{$prefix}pt {
+		@include _padding($axis: top);
+	}
+	// Padding-bottom only ---
+	#{if(&, '&', '')}#{$prefix}pb {
+		@include _padding($axis: bottom);
+	}
+
+	#{if(&, '&', '')}#{$prefix}pl {
+		@include _padding($axis: left);
+	}
+
+	#{if(&, '&', '')}#{$prefix}pr {
+		@include _padding($axis: right);
+	}
+
+	#{if(&, '&', '')}#{$prefix}py {
+		@include _padding($axis: top);
+		@include _padding($axis: bottom);
+	}
+
+	#{if(&, '&', '')}#{$prefix}px {
+		@include _padding($axis: left);
+		@include _padding($axis: right);
+	}
+}

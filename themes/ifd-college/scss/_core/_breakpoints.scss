@@ -1,0 +1,31 @@
+// Find he core breakpoint values in variables.scss, this is just a supporting file for those.
+
+// Orientation-based
+$sm_p: (min-height $sm) $portrait; 
+$md_p: (min-height $md) $portrait;
+$lg_p: (min-height $lg) $portrait;
+$xl_p: (min-height $xl) $portrait;
+$xxl_p: (min-height $xxl) $portrait;
+
+$sm_l: (min-width $sm) $landscape; 
+$md_l: (min-width $md) $landscape;
+$lg_l: (min-width $lg) $landscape;
+$xl_l: (min-width $xl) $landscape;
+$xxl_l: (min-width $xxl) $landscape;
+
+$sm-down_p: (max-width $sm) $portrait;
+$md-down_p: (max-width $md) $portrait;
+$lg-down_p: (max-width $lg) $portrait;
+$xl-down_p: (max-width $xl) $portrait;
+$xxl-down_p: (max-width $xxl) $portrait;
+
+$sm-down_l: (max-width $sm) $landscape;
+$md-down_l: (max-width $md) $landscape;
+$lg-down_l: (max-width $lg) $landscape;
+$xl-down_l: (max-width $xl) $landscape;
+$xxl-down_l: (max-width $xxl) $landscape;
+
+
+$spacing-iterations: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20);
+$min-height-iterations: (42, 65, 89, 90, 100, 105, 114, 134, 140, 170, 190);
+$max-width-iterations: (348, 361);

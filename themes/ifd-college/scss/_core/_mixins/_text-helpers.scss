@@ -1,0 +1,31 @@
+﻿@mixin _text-helper-classes($prefix: '.') {
+	#{if(&, '&', '')}#{$prefix}text {
+		// Weight
+		&-bold {
+			font-weight: bold;
+		}
+		// Sizes.
+		&-small {
+			font-size: 0.75rem;
+			line-height: 1rem;
+		}
+		// Alignment
+		&-center {
+			text-align: center;
+		}
+		
+		&-uppercase{
+			text-transform: uppercase;
+		}
+
+		&-right {
+			text-align: right;
+		}
+
+		&-left,
+		&--align-left {
+			text-align: left;    
+		}
+		
+	}
+} 

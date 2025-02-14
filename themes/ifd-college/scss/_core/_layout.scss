@@ -1,0 +1,41 @@
+﻿* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $body-bg-color;
+	color: $body-text-color; //--var(body-color);
+	position: relative;
+	overflow-x: hidden;
+	font-family: $body-font-family;
+	font-size: $body-font-size;
+	font-weight: $body-font-weight;
+	line-height: $body-line-height;
+}
+
+
+.svg-sprite {
+	display: none;
+}
+
+.container {
+	@include container();
+}
+
+
+
+main {
+	overflow: hidden;
+
+	@include breakpoint($md-down) {
+		//padding-top: 5rem;
+	}
+
+	@include breakpoint($md) {
+		//padding-top: 8rem;
+	}
+
+	@include breakpoint($lg) {
+		//padding-top: 4rem;
+	}
+}

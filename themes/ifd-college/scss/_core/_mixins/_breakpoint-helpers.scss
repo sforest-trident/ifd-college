@@ -1,0 +1,38 @@
+// -- Dev mode Breakpoint helpers
+// Used to put a simple bit of text to help the developer understand what breakppoint is being rendered.
+
+@mixin dev-breakpoint-helpers{
+    
+	position: relative;
+
+	&:after{
+		background: red;
+		color: #fff;
+		content: 'test';
+		display: block;
+		top: 0;
+		left: 0;
+		position: fixed;
+		
+		@include breakpoint($md-down){ 
+			content: 'SM';
+		}
+		
+		@include breakpoint($md){
+			content: 'MD';
+		}
+		
+		@include breakpoint($lg){
+			content: 'LG';
+		}
+		
+		@include breakpoint($xl){
+			content: 'XL';
+		}
+		
+		@include breakpoint($xxl){
+			content: 'XXL';
+		}
+	}
+	
+}

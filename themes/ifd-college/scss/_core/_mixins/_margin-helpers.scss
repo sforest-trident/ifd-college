@@ -1,0 +1,70 @@
+﻿@mixin _margin($axis: false) {
+	//$spacing-iterations
+	@each $iteration in $spacing-iterations {
+
+		&-#{$iteration} {
+			@if($axis) {
+				margin-#{$axis}: #{$iteration}rem !important;
+			}
+			@else {
+				margin: #{$iteration}rem !important;
+			}
+		}
+	}
+}
+
+
+// Axis-based helpers
+@mixin margin-y($top: $value, $bottom: $top) {
+	margin-top: $top;
+	margin-bottom: $bottom;
+}
+
+@mixin margin-x($value) {
+	margin-left: $value;
+	margin-right: $value;
+}
+
+
+
+
+@mixin _all-margins($prefix: '') {
+	#{if(&, '&', '')}#{$prefix}m {
+		@include _margin();
+	}
+	// Padding-top only ---
+	#{if(&, '&', '')}#{$prefix}mt {
+		@include _margin($axis: top);
+	}
+	// Padding-bottom only ---
+	#{if(&, '&', '')}#{$prefix}mb {
+		@include _margin($axis: bottom);
+	}
+
+	#{if(&, '&', '')}#{$prefix}ml {
+		@include _margin($axis: left);
+	}
+
+	#{if(&, '&', '')}#{$prefix}mr {
+		@include _margin($axis: right);
+	}
+
+	#{if(&, '&', '')}#{$prefix}my {
+		@include _margin($axis: top);
+		//@include _margin($axis: bottom);
+		&-auto {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+	}
+
+	#{if(&, '&', '')}#{$prefix}mx {
+		@include _margin($axis: left);
+		@include _margin($axis: right);
+
+		&-auto {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

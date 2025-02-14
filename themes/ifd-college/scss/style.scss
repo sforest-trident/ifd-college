@@ -1,0 +1,456 @@
+/**
+ * Theme Name:        IFD College
+ * Description:       Theme for IFD College
+ * Version:           1.0.0
+ * Author:            Trident Marketing Anglia Ltd
+ * Author URI:        https://tridentmarketinguk.com
+ * Tags:              classic
+ * Text Domain:       ifdc
+ * Domain Path:       /assets/lang
+ * Tested up to:      6.7
+ * Requires at least: 6.7
+ * Requires PHP:      8.1
+ * License:           GNU General Public License v2.0 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+
+ // Import vendor files
+//@import '../lib/bootstrap/bootstrap.scss';
+
+@import "_core/_variables";
+
+
+/* Global Font Variables */
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root {
+    // Find the root values for these in _variables.scss
+    --e-global-color-primary: #{map-get($site-colours, 'primary')};
+    --e-global-color-secondary: #{map-get($site-colours, 'secondary')};
+    --e-global-color-text: #{map-get($site-colours, 'text')};
+    --e-global-color-accent: #{map-get($site-colours, 'accent')};
+    --e-global-color-white: white;
+    --e-global-color-c64abec: #{map-get($site-colours, 'c64abec')};
+    --e-global-typography-primary-font-family:#{map-get($site-typography, 'primary-font-family')};
+    --e-global-typography-primary-font-weight: 600;
+    --e-global-typography-secondary-font-family: "Nunito";
+    --e-global-typography-secondary-font-weight: 400;
+    --e-global-typography-text-font-family: "Nunito";
+    --e-global-typography-text-font-weight: 400;
+    --e-global-typography-accent-font-family: "Nunito"; 
+    --e-global-typography-accent-font-weight: 500;
+}
+
+@import "_core/_mixins";
+@import "_vendor/_breakpoint";
+//@import "_vendor/_normalize";
+
+// Core
+@import "_core/_breakpoints";
+@import "_core/_typography";
+@import "_core/_layout";
+
+// Components
+@import "_components/_header.scss";
+@import "_components/_buttons.scss";
+@import "_components/_footer.scss";
+
+/* Body Font */
+body {
+    font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+    font-size: 20px;
+    font-weight: var(--e-global-typography-primary-font-weight);
+    line-height: 31px;
+    background-color: #EAEAEA95;
+    margin: 0;
+    padding: 0;
+}
+
+// Header Widgets
+@import "_components/_header-widgets.scss";
+
+.menu-header-container {
+    display: none;
+
+    @include breakpoint($md) {
+        display: flex;
+        flex-grow: 1;    
+    }
+    
+}
+
+.hero-feature-image{
+    display: none;
+
+    @include breakpoint($md) {
+        display: block;   
+    }
+}
+
+.menu-header-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-header-container ul li {
+    margin: 0 20px;
+}
+
+.menu-header-container ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.wp-block-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 125px;
+}
+
+#page-title .wp-block-button__link{
+    line-height: 1.3em;
+    font-size: 40px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+.wp-block-button__link {
+    width: 100%;
+    text-align: center;
+}
+
+.wp-block-columns {
+    max-width: 1400px!important;
+    margin: 0 auto!important;
+}
+
+/* Footer Widgets */
+footer {
+    background-color: var(--e-global-color-accent);
+    width: 100%!important;
+    margin: 0px!important;
+    padding: 50px 0 0 0!important;
+}
+.footer-widgets {
+    background-color: var(--e-global-color-accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: "Nunito", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--e-global-color-white);
+}
+
+.footer-widget-area {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-widget img {
+    height: 125px!important;
+    width: auto;
+}
+
+.footer-widget p {
+    color: #fff;
+}
+
+.footer-widget p.copyright {
+    font-size: 14px;
+    line-height: 19px;
+}
+
+/* Header and Footer Navigation Font */
+.header-nav-menu a,
+.footer-nav-menu a,
+.footer-widget a {
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+
+.header-nav-menu a:hover,
+.menu-header-container ul li a:hover,
+.menu-header-container ul li.current-menu-item a {
+    color: var(--e-global-color-accent) !important;
+}
+
+/* Footer Menu */
+.menu-footer-container {
+    text-align: right;
+}
+
+.menu-footer-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.menu-footer-container ul li {
+    margin-bottom: 0px;
+}
+
+.menu-footer-container ul li a {
+    color: var(--e-global-color-white);
+    fill: var(--e-global-color-white);
+    padding: 1px 0;
+    text-decoration: none;
+}
+
+.menu-footer-container ul li a:hover,
+.menu-footer-container ul li.current-menu-item a {
+    color: #000000;
+}
+
+/* Button Styles */
+.wp-block-buttons.is-layout-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wp-block-button {
+    display: inline-flex;
+}
+
+.wp-block-button__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--e-global-color-accent);
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--e-global-color-accent);
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+    color: var(--e-global-color-accent);
+    background-color: var(--e-global-color-white);
+    border-color: var(--e-global-color-accent);
+}
+
+#home-page-top {
+
+    @include breakpoint($md) {
+        height: 150vh;
+        margin-right: 174px;
+    }
+}
+
+#page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    
+    @include breakpoint($md) {
+        margin-top: -150vh; 
+        width: 50vw;
+        margin: -123px 0 123px 0;
+        height: calc(#{"100vh - 123px"});
+    }
+}
+
+#page-title {
+    font-size: 24px;
+    font-weight: bold;
+
+    @include breakpoint($md) {
+        flex: 1;
+        margin-right: 20px;
+        margin-left: 400px;
+    }
+}
+
+#page-thumbnail {
+    flex: 1;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 9999;
+}
+
+h1 {
+    font-family: var(--e-global-typography-primary-font-family);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 32px;
+
+    @include breakpoint($md) {
+        font-size: 60px;
+        line-height: 70px;
+    }
+}
+[class^="stmlms-"], 
+[class*=" stmlms-"] {
+    font-weight: 900;
+}
+.stm_searchbox {
+    margin: 0px!important;
+    background-color: #50991F!important;
+    border: 1px solid #50991F!important;
+    border-radius: 50px!important;
+    padding: 10px 10px 10px 50px;
+    max-width: 450px!important;
+    
+}
+.stm_searchbox .stm_lms_courses_search {
+    max-width: none!important;
+    margin: 10px 10px 10px 50px;
+}
+.stm_searchbox .stm_lms_courses_search__button {
+    right: unset;
+    left: -45px!important;
+    color: #FFFFFF!important;
+    font-size: 30px!important;
+    font-weight: 900!important;
+}
+.stm_searchbox .stm_lms_courses_search .autocomplete-wrapper .autocomplete-input {
+    padding: 10px!important;
+    border: 1px solid #50991F!important;
+    border-radius: 50px!important;
+    
+}
+
+/* Center the taxonomy filter */
+#homepage .wp-block-masterstudy-courses-categories-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#homepage .lms-courses-category-list {
+	align-items: center;
+}
+#homepage .lms-courses-category-list__item {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+	border-radius: 100px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+	position: relative; /* Required for 'top' to work */
+    transition: top 0.3s ease-in-out; /* Smooth animation */
+}
+
+#homepage .lms-courses-category-list__item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: transparent!important;
+    border: none!important;
+	padding: 0px;
+	overflow: unset;
+}
+#homepage .lms-courses-category-list__item:hover{
+	top: -40px; /* Move up */
+}
+
+#homepage .lms-courses-category-list__item a span {
+	overflow: unset!important;
+	white-space: unset!important;
+	color: white;
+	font-family: 'nunito', sans-serif;
+	font-size: 18px;
+	line-height: 21px;
+	text-transform: uppercase;	
+}
+
+#homepage .lms-courses-category-list__item  a:hover span{
+    color: #000000!important;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(1) {
+    background-color: #80D649!important;
+	height: 400px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(2) {
+    background-color: #6CC136!important;
+	height: 469px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(3) {
+    background-color: #539B25!important;
+	height: 538px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(4) {
+    background-color: #46861D!important;
+	height: 609px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(5) {
+    background-color: #386C17!important;
+	height: 676px;
+}
+
+#homepage .lms-courses-category-list__item:nth-child(6) {
+    background-color: #227AFF!important;
+	height: 609px;
+	margin-left: 20px;
+}
+
+
+/* Hover effect */
+#homepage .lms-courses-category-list__item:hover {
+    filter: brightness(90%);
+    color: #000000!important;
+}
+
+#news {
+    background-color: #1D3E07;
+    padding: 50px 0px;
+}
+#news p {
+    color: #fff;
+    padding: 20px 0 0 0;
+    max-width: 50%;
+}
+.white-back {
+    width: calc(#{'100vw - em'});
+    left: 0;
+    position: absolute;
+    margin: 0;
+    padding: 50px;
+}
+.white-back.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#testimonials {
+    background-color: rgba( 29, 62, 7, 1 );
+}
+#testimonials .wp-block-toolset-views-view-editor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#testimonials .wpv-pagination-previous-next-buttons {
+    margin: 0 -80px;
+}
+
+
+
+@import "_core/_core";

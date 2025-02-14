@@ -1,0 +1,54 @@
+﻿// -- Variables.css
+// This is essentially anything that is a variable in the CSS, such as colours, fonts, breakpoints, etc.
+
+// Colour Palette
+$site-colours: ( 
+    'primary': #1D3E07,
+    'secondary': #54595F,
+    'text': #000,
+    'accent': #50991F,
+    'c64abec': #6CC135,
+);
+
+
+// Site Typography
+$primary-font-family:  'Nunito', Arial, sans-serif;
+$secondary-font-family: 'Nunito', Arial, sans-serif;
+$body-font-family: 'Arial', sans-serif;
+$body-font-size: 16px;
+$body-line-height: 24px; 
+$body-font-weight: 400;
+
+$site-typography: ( 
+    'primary-font-family': 'Nunito',
+    'primary-font-weight': 600,
+    'secondary-font-family': "Nunito",
+    'secondary-font-weight': 400,
+    'text-font-family': "Nunito",
+    'text-font-weight': 400,
+    'accent-font-family': "Nunito",
+    'accent-font-weight': 500
+);
+
+//SASS Variables
+$body-text-color: #000;
+$body-bg-color: #fff;
+
+// ======================================
+
+// Breakpoints
+$sm: 361px;
+$md: 768px;
+$lg: 993px;
+$xl: 1367px;
+$xxl: 1919px;
+
+$sm-down: max-width ($sm - 1);
+$md-down: max-width ($md - 1); 
+$lg-down: max-width ($lg - 1);
+$xl-down: max-width ($xl - 1);
+
+$portrait: (orientation portrait);
+$landscape: (orientation landscape);
+
+

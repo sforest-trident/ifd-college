@@ -1,0 +1,30 @@
+/* Header Widgets */
+.header-widgets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 99999;
+}
+.header-widgets.scrolled {
+    background-color: #f3f3f3;
+}
+
+.header-widget-area {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-widget img {
+    width: 205px;
+    height: auto;
+}
