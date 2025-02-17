@@ -1,0 +1,159 @@
+
+
+#homepage.lms-courses-category-container{
+    padding-bottom: 3rem;
+
+    .wp-block-heading{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+#homepage .wp-block-masterstudy-courses-categories-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  #homepage .lms-courses-category-list {
+      align-items: center;
+      max-width: unset;
+  }
+  
+  #homepage .lms-courses-category-list__item {
+    display: inline-block;
+    padding: 20px;
+    border: none;
+    border-radius: 100px;
+    text-align: center;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+    position: relative; /* Required for 'top' to work */
+    -webkit-transition: top 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out; /* Smooth animation */
+
+    @include breakpoint($md) {
+        padding: 10px 20px;
+    }
+  }
+  
+  #homepage .lms-courses-category-list__item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: transparent !important;
+    border: none !important;
+    padding: 0px;
+    overflow: unset;
+    justify-content: center;
+
+    .lms-btn{
+        display: none;
+
+        @include breakpoint($md) {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+  }
+  
+  #homepage .lms-courses-category-list__item:hover {
+    //top: -40px; /* Move up */
+  }
+  
+  #homepage .lms-courses-category-list__item a span {
+    overflow: unset !important;
+    white-space: unset !important;
+    color: white;
+    font-family: "nunito", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+  }
+  
+  #homepage .lms-courses-category-list__item a:hover span,
+  #homepage .lms-courses-category-list__item a:hover button {
+    color: #000000 !important;
+    border-color: #000000 !important;
+  }
+
+  // Home > LMS Items:
+  #homepage .lms-courses-category-list__item:nth-child(1) {
+    background-color: #80D649 !important;
+
+    @include breakpoint($md) {
+      height: 400px;
+    }
+  }
+  
+  #homepage .lms-courses-category-list__item:nth-child(2) {
+    background-color: #6CC136 !important;
+    
+    @include breakpoint($md) {
+        height: 469px;  
+    }
+  }
+   
+  #homepage .lms-courses-category-list__item:nth-child(3) {
+    background-color: #539B25 !important;
+
+    @include breakpoint($md) {
+        height: 538px;
+    }
+  }
+  
+  #homepage .lms-courses-category-list__item:nth-child(4) {
+    background-color: #46861D !important;
+
+    @include breakpoint($md) {
+        height: 609px;
+    }
+  }
+  
+  #homepage .lms-courses-category-list__item:nth-child(5) {
+    background-color: #386C17 !important;
+    
+    @include breakpoint($md) {
+        height: 676px;
+    }
+  }
+  
+  #homepage .lms-courses-category-list__item:nth-child(6) {
+    background-color: #227AFF !important;
+    @include breakpoint($md) {
+        height: 609px;
+        margin-left: 20px;
+    }
+  }
+  
+  /* Hover effect */
+  #homepage .lms-courses-category-list__item:hover {
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+    color: #000000 !important;
+  }
+
+
+  .home__our-brochure{
+    @include breakpoint($md-down) {
+        padding: var(--e-global-sm-viewport_gutter-h) var(--e-global-sm-viewport_gutter-v);
+    }
+
+    .content-block{
+      padding-left: unset;
+      padding-right: unset;
+    }
+
+    .wp-block-buttons{
+
+        justify-content: flex-start !important;
+        margin-top: 2rem;
+      
+    }
+  }

@@ -5,10 +5,11 @@
     justify-content: space-between;
     position: sticky;
     top: 0;
-    padding: 0;
     margin: 0;
     transition: background-color 0.5s ease-in-out;
     z-index: 99999;
+
+    padding: 1rem var(--e-global-sm-viewport_gutter-h);
 }
 .header-widgets.scrolled {
     background-color: #f3f3f3;
@@ -25,6 +26,12 @@
 }
 
 .header-widget img {
-    width: 205px;
+    width: 100px;
     height: auto;
+    position: relative;
+    left: -1rem;
+
+    @include breakpoint($md) {
+        width: 205px;
+    }
 }

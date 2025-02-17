@@ -1,17 +1,131 @@
-﻿footer {
+﻿/* Footer Widgets */
+footer {
+
+	background-color: var(--e-global-color-accent);
+	width: 100% !important;
+	margin: 0px !important;
+	padding: 50px 0 0 0 !important;
 
 
-	.backTop {
-		position: absolute;
+	.footer-nav-menu a,
+	.footer-widget a{
+		text-transform: uppercase;
+		letter-spacing: 0px;
+		color: white;
+		text-decoration: none;
 
-		@include breakpoint($md-down) {
-			bottom: 10rem;
-			right: 1rem;
+		&:focus,
+		&:hover{
+			text-decoration: underline;
 		}
+	}
+
+	
+	  
+	.footer-widgets {
+		background-color: var(--e-global-color-accent);
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding: 0px;
+		max-width: 1400px;
+		margin: 0 auto;
+		font-family: var(--e-global-typography-text-font-family);
+		font-size: var(--e-global-typography-text-font-size);
+		font-weight: var(--e-global-typography-text-font-weight);
+		line-height: var(--e-global-typography-text-font-line-height);
+		color: var(--e-global-color-white);
+
+		.footer-1{
+			display: none;
+			line-height: 1.75rem;
+
+			@include breakpoint($md) {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+		}
+
+		.footer-2{
+			font-size: 0.85rem;
+			padding-bottom: 2rem;
+
+			@include breakpoint($md) {
+				text-align: center;
+			}
+
+			.wp-block-image{
+				margin-bottom: 1rem;
+
+				@include breakpoint($md) {
+					margin-bottom: 2rem;
+				}
+			}
+		}
+
+		.footer-3{
+			display: none;
+			line-height: 1.75rem;
+
+			@include breakpoint($md) {
+				display: block;
+			}
+		}
+	}
+	  
+	  .footer-widget-area {
+		flex: 1;
+		padding: 0 var(--e-global-sm-viewport_gutter-h) var(--e-global-sm-viewport_gutter-v);
 
 		@include breakpoint($md) {
-			bottom: 8rem;
-			right: 2rem;
+			padding: unset;
 		}
+	  }
+	  
+	  .footer-widget img {
+		height: 80px;
+		width: auto;
+
+		@include breakpoint($md) {
+			height: 125px;
+		}
+	  }
+	  
+	  .footer-widget p {
+		color: #fff;
+	  }
+	  
+	  .footer-widget p.copyright {
+		font-size: 14px;
+		line-height: 19px;
+	  }
+
+	/* Footer Menu */
+	.menu-footer-container {
+		text-align: right;
+	}
+  
+	.menu-footer-container ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+	}
+  
+	.menu-footer-container ul li {
+		margin-bottom: 0px;
+	}
+  
+	.menu-footer-container ul li a {
+		color: var(--e-global-color-white);
+		fill: var(--e-global-color-white);
+		padding: 1px 0;
+		text-decoration: none;
+	}
+  
+	.menu-footer-container ul li a:hover,
+	.menu-footer-container ul li.current-menu-item a {
+		color: #000000;
 	}
 }

@@ -18,7 +18,7 @@
  // Import vendor files
 //@import '../lib/bootstrap/bootstrap.scss';
 
-@import "_core/_variables";
+@use "_core/_variables" as *;
 
 /* Global Font Variables */
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
@@ -38,7 +38,7 @@
     --e-global-typography-secondary-font-weight: 400;
     --e-global-typography-text-font-family: "Nunito";
     --e-global-typography-text-font-weight: 400;
-    --e-global-typography-text-font-weight: 24px;
+    --e-global-typography-text-font-line-height: 24px;
     --e-global-typography-accent-font-family: "Nunito"; 
     --e-global-typography-accent-font-weight: 500;
 
@@ -46,8 +46,8 @@
     // H1 / Primary heading
   --e-global-typography-h1-font-family: var(--e-global-typography-primary-font-family);
   --e-global-typography-h1-font-weight: 800;
-  --e-global-typography-h1-font-size: 18px;
-  --e-global-typography-h1-line-height: 75px;
+  --e-global-typography-h1-font-size: 30px;
+  --e-global-typography-h1-line-height: 2.5rem;
   --e-global-typography-h1-font-size_lg: 60px;
   --e-global-typography-h1-line-height_lg: 70px;
 
@@ -60,6 +60,9 @@
   --e-global-typography-h2-font-weight: 900;
   --e-global-typography-h2-font-size_lg: 50px;
   --e-global-typography-h2-line-height_sm: 50px;
+  
+  --e-global-sm-viewport_gutter-v: 35px;
+  --e-global-sm-viewport_gutter-h: 3rem;
 }
 
 @import "_core/_mixins";
@@ -76,7 +79,8 @@
 @import "_components/_buttons.scss";
 @import "_components/_footer.scss";
 
-
+// Pages
+@import "pages/home";
 
 @import "_core/_core";
 
@@ -158,13 +162,7 @@ body {
     
 }
 
-.hero-feature-image{
-    display: none;
 
-    @include breakpoint($md) {
-        display: block;   
-    }
-}
   
 * {
   -webkit-box-sizing: border-box;
@@ -251,21 +249,6 @@ body {
     }
   }
   
-  footer .backTop {
-    position: absolute;
-  }
-  @media (max-width: 767px) {
-    footer .backTop {
-      bottom: 10rem;
-      right: 1rem;
-    }
-  }
-  @media (min-width: 768px) {
-    footer .backTop {
-      bottom: 8rem;
-      right: 2rem;
-    }
-  }
   
   /* Body Font */
   body {
@@ -278,94 +261,6 @@ body {
     padding: 0;
   }
   
-  /* Header Widgets */
-  .header-widgets {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    position: sticky;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    -webkit-transition: background-color 0.5s ease-in-out;
-    transition: background-color 0.5s ease-in-out;
-    z-index: 99999;
-  }
-  
-  .header-widgets.scrolled {
-    background-color: #f3f3f3;
-  }
-  
-  .header-widget-area {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 100%;
-    z-index: 1000;
-  }
-  
-  .header-widget img {
-    width: 205px;
-    height: auto;
-  }
-  
-  .menu-header-container {
-    display: none;
-  }
-  @media (min-width: 768px) {
-    .menu-header-container {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1;
-    }
-  }
-  
-  .hero-feature-image {
-    display: none;
-  }
-  @media (min-width: 768px) {
-    .hero-feature-image {
-      display: block;
-    }
-  }
-  
-  .menu-header-container ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu-header-container ul li {
-    margin: 0 20px;
-  }
-  
-  .menu-header-container ul li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
   
   .wp-block-buttons {
     display: -webkit-box;
@@ -374,14 +269,20 @@ body {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    width: 125px;
+
+    @include breakpoint($md) { 
+      width: 125px;
+    }
   }
   
   #page-title .wp-block-button__link {
-    line-height: 1.3em;
-    font-size: 40px;
     padding: 10px 20px;
     font-weight: 600;
+
+    @include breakpoint($md) {
+      font-size: 40px;
+      line-height: 1.3em;
+    }
   }
   
   .wp-block-button__link {
@@ -394,60 +295,10 @@ body {
     margin: 0 auto !important;
   }
   
-  /* Footer Widgets */
-  footer {
-    background-color: var(--e-global-color-accent);
-    width: 100% !important;
-    margin: 0px !important;
-    padding: 50px 0 0 0 !important;
-  }
   
-  .footer-widgets {
-    background-color: var(--e-global-color-accent);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    padding: 0px;
-    max-width: 1400px;
-    margin: 0 auto;
-    font-family: "Nunito", Sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: var(--e-global-color-white);
-  }
-  
-  .footer-widget-area {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    margin: 0 10px;
-  }
-  
-  .footer-widget img {
-    height: 125px !important;
-    width: auto;
-  }
-  
-  .footer-widget p {
-    color: #fff;
-  }
-  
-  .footer-widget p.copyright {
-    font-size: 14px;
-    line-height: 19px;
-  }
   
   /* Header and Footer Navigation Font */
-  .header-nav-menu a,
-  .footer-nav-menu a,
-  .footer-widget a {
+  .header-nav-menu a{
     text-transform: uppercase;
     letter-spacing: 0px;
     text-decoration: none;
@@ -459,33 +310,7 @@ body {
     color: var(--e-global-color-accent) !important;
   }
   
-  /* Footer Menu */
-  .menu-footer-container {
-    text-align: right;
-  }
   
-  .menu-footer-container ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-  }
-  
-  .menu-footer-container ul li {
-    margin-bottom: 0px;
-  }
-  
-  .menu-footer-container ul li a {
-    color: var(--e-global-color-white);
-    fill: var(--e-global-color-white);
-    padding: 1px 0;
-    text-decoration: none;
-  }
-  
-  .menu-footer-container ul li a:hover,
-  .menu-footer-container ul li.current-menu-item a {
-    color: #000000;
-  }
   
   /* Button Styles */
   .wp-block-buttons.is-layout-flex {
@@ -574,28 +399,62 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  .wp-block-button__link:hover,
-  .wp-block-button__link:focus {
+  .wp-block-button__link:hover, 
+  .wp-block-button__link:focus { 
     color: var(--e-global-color-accent);
     background-color: var(--e-global-color-white);
     border-color: var(--e-global-color-accent);
   }
   
+
+  #home-page-top {
+    height: calc(100vh - 123px);
+    
+  display: flex;
+  padding: 0px;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  min-width: 200px;
+  width: 30vw;
+
+  @include breakpoint($md) {
+    top: 0;
+    margin-right: 174px;
+    width: 500px;
+    top: -30px;
+  }
+
+
+  .hero-feature-image{
+      //display: none;
+
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: top right;
+      background-size: contain;
+      height: 140vh; 
+      margin-top: -80px; 
+      z-index: 9999; 
+      position: relative;
+      right: -1rem;
+      margin-right: 35px; 
+      width: 100%;
+      
+
+      @include breakpoint($md) {
+          display: block;   
+          //margin-right: 11vw;
+          height: 140vh; 
+          background-position: center right;
+      }
+  }
+
+
+}
+
   @media (min-width: 768px) {
-    #home-page-top {
-      height: calc(100vh - 123px);
-      margin-right: 174px;
-      display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0px;
-    }
+    
     #home-page-title {
         margin-left: 12vw;
         font-size: 24px;
@@ -620,19 +479,23 @@ padding: 0px 20px!important;
         -ms-flex-align: center;
             align-items: center;
     padding: 0px;
-  }
+    margin-left: 35px;
+    width: 30vw; 
+  } 
   @media (min-width: 768px) {
-    #page-top {
-      margin-top: -150vh;
-      width: 50vw;
+    #page-top { 
+      margin-top: -150vh; 
+      width: 50vw; 
       margin: -123px 0 123px 0;
       height: calc(100vh - 123px);
+
     }
   }
   
   #page-title {
     font-size: 24px;
     font-weight: bold;
+    z-index: 9999;
   }
   @media (min-width: 768px) {
     #page-title {
@@ -644,7 +507,7 @@ padding: 0px 20px!important;
     }
   }
   
-  #page-thumbnail {
+  #page-thumbnail { 
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -744,106 +607,7 @@ padding: 0px 20px!important;
     border-radius: 50px!important;
   }
   
-  /* Center the taxonomy filter */
-  #homepage .wp-block-masterstudy-courses-categories-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 10px;
-  }
   
-  #homepage .lms-courses-category-list {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  
-  #homepage .lms-courses-category-list__item {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 100px;
-    text-align: center;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-    position: relative; /* Required for 'top' to work */
-    -webkit-transition: top 0.3s ease-in-out;
-    transition: top 0.3s ease-in-out; /* Smooth animation */
-  }
-  
-  #homepage .lms-courses-category-list__item a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    background: transparent !important;
-    border: none !important;
-    padding: 0px;
-    overflow: unset;
-    justify-content: center;
-  }
-  
-  #homepage .lms-courses-category-list__item:hover {
-    top: -40px; /* Move up */
-  }
-  
-  #homepage .lms-courses-category-list__item a span {
-    overflow: unset !important;
-    white-space: unset !important;
-    color: white;
-    font-family: "nunito", sans-serif;
-    font-size: 18px;
-    line-height: 21px;
-    text-transform: uppercase;
-  }
-  
-  #homepage .lms-courses-category-list__item a:hover span,
-  #homepage .lms-courses-category-list__item a:hover button {
-    color: #000000 !important;
-    border-color: #000000 !important;
-  }
-  
-  #homepage .lms-courses-category-list__item:nth-child(1) {
-    background-color: #80D649 !important;
-    height: 400px;
-  }
-  
-  #homepage .lms-courses-category-list__item:nth-child(2) {
-    background-color: #6CC136 !important;
-    height: 469px;
-  }
-  
-  #homepage .lms-courses-category-list__item:nth-child(3) {
-    background-color: #539B25 !important;
-    height: 538px;
-  }
-  
-  #homepage .lms-courses-category-list__item:nth-child(4) {
-    background-color: #46861D !important;
-    height: 609px;
-  }
-  
-  #homepage .lms-courses-category-list__item:nth-child(5) {
-    background-color: #386C17 !important;
-    height: 676px;
-  }
-  
-  #homepage .lms-courses-category-list__item:nth-child(6) {
-    background-color: #227AFF !important;
-    height: 609px;
-    margin-left: 20px;
-  }
-  
-  /* Hover effect */
-  #homepage .lms-courses-category-list__item:hover {
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
-    color: #000000 !important;
-  }
   
   #news {
     background-color: #1D3E07;
@@ -1870,3 +1634,31 @@ padding: 0px 20px!important;
   .no-scroll {
     overflow: hidden;
   }
+
+
+ /// Start of Scott's new stuff - 17/02/25
+ .content-section{
+
+  .content-block{
+      padding: 0 var(--e-global-sm-viewport_gutter-v) var(--e-global-sm-viewport_gutter-h);
+
+    .wp-block-heading{
+      margin-top: unset;  
+
+      *{
+        padding: unset;
+      }
+    }
+  }
+} 
+
+
+.section__socials{
+  @include breakpoint($md) {
+    padding: 100px 0; 
+  }
+}
+
+
+$theme-map: null;
+$private-breakpoint-context-holder: null
