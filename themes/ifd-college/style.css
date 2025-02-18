@@ -1478,6 +1478,54 @@ body {
   }
 }
 
+.tb-brick:nth-of-type(2),
+.tb-brick:nth-of-type(5),
+.tb-brick:nth-of-type(8),
+.tb-brick:nth-of-type(10) {
+  margin: -100px;
+}
+
+.gap50 {
+  gap: 50px;
+}
+
+.bg-eaeaea {
+  background-color: rgba(234, 234, 234, 0.5843137255) !important;
+}
+
+.why-box {
+  padding: 40px;
+  width: 400px;
+  height: 342px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1607843137);
+  border-radius: 21px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  font-family: "nunito", sans-serif;
+  font-weight: 800;
+}
+
+.why-box-text {
+  font-size: 40px;
+  color: #1D3E07;
+  line-height: 45px;
+  font-family: "nunito", sans-serif;
+}
+
+.why-box-number {
+  font-size: 120px;
+  color: #1D3E07;
+  line-height: 125px;
+}
+
+.tilt-box {
+  -webkit-transform: matrix(1, -0.09, 0.09, 1, 0, 0);
+          transform: matrix(1, -0.09, 0.09, 1, 0, 0);
+}
+
 .tickbox {
   background-color: #1D3E07;
   border-radius: 100px;
@@ -1492,7 +1540,8 @@ body {
   fill: #ffffff;
 }
 
-.course {
+.course,
+.news {
   background-color: #FFFFFF;
   border: 1px solid #54595F;
   padding: 0px !important;
@@ -1501,7 +1550,8 @@ body {
           box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
-.course .code {
+.course .code,
+.news .date {
   background-color: #50991F !important;
   border-radius: 100px !important;
   color: #1D3E07 !important;
@@ -1515,7 +1565,8 @@ body {
   width: fit-content;
 }
 
-.course .header {
+.course .header,
+.news .header {
   font-size: 20px;
   line-height: 22px;
   font-weight: 600;
@@ -1529,7 +1580,8 @@ body {
   line-height: 1.1em;
 }
 
-.course .tb-button__link {
+.course .tb-button__link,
+.news .tb-button__link {
   background-color: #50991F !important;
   border-radius: 100px !important;
   color: #ffffff !important;
