@@ -7,3 +7,4 @@ themes/twentytwentyfive/*
 /maintenance/*
 /backups-dup-lite/*
 /uploads
+.vscode/settings.json
