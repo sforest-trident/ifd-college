@@ -100,11 +100,174 @@ body {
 
 //CSS Stuff goes here
 
+#page-thumbnail {
+  border-top-left-radius: 200px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 200px;
+  border: none;
+  height: 285px!important;
+}
+
+.primary-header {
+  font-family: var(--e-global-typography-h1-font-family);
+  font-size: var(--e-global-typography-h1-font-size);
+  font-weight: var(--e-global-typography-h1-font-weight);
+  line-height: var(--e-global-typography-h1-line-height);
+  text-transform: uppercase;
+}
+.narrow-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Columns for Input Fields */
+.col {
+  flex: 1;
+}
+
+.cf7-form label {
+  font-weight: bold;
+  display: block;
+  font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+  font-size: 18px!important;
+  font-weight: 700!important;
+  line-height: 31px!important;
+  text-transform: uppercase;
+} 
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff!important;
+}
+
+.wpcf7 textarea {
+  background-color: #fff!important;
+}
+
+.submit-button {
+  background-color: var(--e-global-color-accent);
+  color: var(--e-global-color-white);
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--e-global-color-accent);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background-color: var(--e-global-color-white);
+  color: var(--e-global-color-accent);
+}
+
+.about .ctl-labels {
+right:unset!important;
+}
+
+.about .ctl-label-big {
+    font-size: 100px;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--e-global-color-primary);
+    line-height: 1.1em;
+    margin-left: 200px;
+}
+.about .ctl-icondot {
+  border-radius: 100px!important;
+  -webkit-border-radius: 100px!important;
+}
+
+.about .ctl-content {
+  background: transparent!important;
+  padding: 0px!important;
+}
+
+.about .ctl-wrapper .ctl-one-sided {
+  max-width: 1400px!important;
+  padding: 0px!important;
+}
+
+.about .ctl-description,
+.about .ctl-wrapper .ctl-description,
+.about .ctl-wrapper .ctl-description ol, 
+.about .ctl-wrapper .ctl-description p,
+.about .ctl-wrapper .ctl-description ul .tb-brick:nth-of-type(2),
+.about .tb-brick:nth-of-type(5), 
+.about .tb-brick:nth-of-type(8), 
+.about .tb-brick:nth-of-type(10) {
+  margin: 0px!important;
+  text-align: left!important;
+  background-color: unset!important;
+  color: var(--e-global-color-primary)!important;
+  font-size: 24px!important;
+  font-weight: 500!important;
+}
+
+.about .ctl-title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #1D3E07;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  text-align: left!important;
+}
+
+.about .ctl-vertical-wrapper.ctl-one-sided:not(.light-skin) .ctl-story.ctl-story-right.odd,
+.about .ctl-story {
+  background: transparent!important;
+}
+
+.about .ctl-wrapper .ctl-vertical-wrapper.ctl-one-sided:where(.ctl-design-3,.ctl-design-6) .ctl-story:not(.ctl-no-media) :where(.ctp-media-slider,.ctl-media,.full-width) {
+  background: #fff!important;
+  border: 1px solid #54595F;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+
+}
+
+.about .ctl-wrapper .ctl-vertical-wrapper.ctl-one-sided:where(.ctl-design-5,.ctl-design-6) .ctl-end, 
+.about .ctl-wrapper .ctl-vertical-wrapper.ctl-one-sided:where(.ctl-design-5,.ctl-design-6) .ctl-start
+{
+  display: none!important;
+}
+
+.about .ctl-wrapper .ctl-description, .ctl-wrapper .ctl-description ol, .ctl-wrapper .ctl-description p, .ctl-wrapper .ctl-description ul
 .tb-brick:nth-of-type(2),
 .tb-brick:nth-of-type(5),
 .tb-brick:nth-of-type(8),
 .tb-brick:nth-of-type(10) {
     margin: -100px;
+}
+
+.ctl-wrapper .ctl-vertical-wrapper.ctl-one-sided:where(.ctl-design-3,.ctl-design-6) .ctl-story:not(.ctl-no-media) .ctl-title {
+  margin-top: 120px!important;   
+}
+
+@media only screen and (min-width: 769px) {
+  .ctl-wrapper .ctl-vertical-wrapper.ctl-one-sided .ctl-story {
+    width: 100%!important;
+  }
+  
 }
 
 .gap50{
@@ -181,17 +344,20 @@ body {
 .news .header {
     font-size: 20px;
     line-height: 22px;
-    font-weight: 600;
+    font-weight: 700;
     color: #1D3E07!important;
-    min-height: 66px;
+    text-transform: uppercase;
 }
-.course .box {
+
+.course .header{
+  min-height: 66px;
+}
+
+.course .box,
+.news .content {
     font-size: 12px;
     font-weight: 300;
     line-height: 1.1em;
-}
-.news .content {
-	
 }
 .course .tb-button__link,
 .news .tb-button__link {

@@ -23,6 +23,12 @@ $page_sub_title= get_post_meta(get_the_ID(), 'page_sub_title', true);
     </div>
 </div>
 
+
+<div id="content">
+    <?php the_content(); ?>
+</div>
+
 <?php endwhile; ?> 
+
 
 <?php get_footer() ?>
