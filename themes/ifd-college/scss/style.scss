@@ -191,7 +191,7 @@ right:unset!important;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--e-global-color-primary);
     line-height: 1.1em;
-    margin-left: 200px;
+    margin-left: 300px;
 }
 .about .ctl-icondot {
   border-radius: 100px!important;
@@ -212,20 +212,17 @@ right:unset!important;
 .about .ctl-wrapper .ctl-description,
 .about .ctl-wrapper .ctl-description ol, 
 .about .ctl-wrapper .ctl-description p,
-.about .ctl-wrapper .ctl-description ul .tb-brick:nth-of-type(2),
-.about .tb-brick:nth-of-type(5), 
-.about .tb-brick:nth-of-type(8), 
-.about .tb-brick:nth-of-type(10) {
+.about .ctl-wrapper .ctl-description ul {
   margin: 0px!important;
   text-align: left!important;
   background-color: unset!important;
   color: var(--e-global-color-primary)!important;
-  font-size: 24px!important;
+  font-size: 20px!important;
   font-weight: 500!important;
 }
 
 .about .ctl-title {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   color: #1D3E07;
   text-transform: uppercase;
@@ -242,7 +239,6 @@ right:unset!important;
   background: #fff!important;
   border: 1px solid #54595F;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
-
 }
 
 .about .ctl-wrapper .ctl-vertical-wrapper.ctl-one-sided:where(.ctl-design-5,.ctl-design-6) .ctl-end, 
@@ -251,11 +247,13 @@ right:unset!important;
   display: none!important;
 }
 
-.about .ctl-wrapper .ctl-description, .ctl-wrapper .ctl-description ol, .ctl-wrapper .ctl-description p, .ctl-wrapper .ctl-description ul
-.tb-brick:nth-of-type(2),
-.tb-brick:nth-of-type(5),
-.tb-brick:nth-of-type(8),
-.tb-brick:nth-of-type(10) {
+.about .ctl-wrapper .ctl-description,
+.about .ctl-wrapper .ctl-description ol,
+.about .ctl-wrapper .ctl-description p, 
+.about .ctl-wrapper .ctl-description ul .tb-brick:nth-of-type(2),
+.about .ctl-wrapper .ctl-description ul .tb-brick:nth-of-type(5),
+.about .ctl-wrapper .ctl-description ul .tb-brick:nth-of-type(8),
+.about .ctl-wrapper .ctl-description ul .tb-brick:nth-of-type(10) {
     margin: -100px;
 }
 
@@ -268,6 +266,13 @@ right:unset!important;
     width: 100%!important;
   }
   
+}
+
+.tb-brick:nth-of-type(2),
+.tb-brick:nth-of-type(5), 
+.tb-brick:nth-of-type(8), 
+.tb-brick:nth-of-type(10) {
+margin-top: -100px;
 }
 
 .gap50{
