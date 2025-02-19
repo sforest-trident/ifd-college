@@ -100,15 +100,6 @@ body {
 
 //CSS Stuff goes here
 
-#page-thumbnail {
-  border-top-left-radius: 200px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 200px;
-  border: none;
-  height: 285px!important;
-}
-
 .primary-header {
   font-family: var(--e-global-typography-h1-font-family);
   font-size: var(--e-global-typography-h1-font-size);
@@ -520,18 +511,46 @@ margin-top: -100px;
   
   
   /* Header and Footer Navigation Font */
-  .header-nav-menu a{
+  .menu-header-container {
+    text-align: center; /* Centers the menu */
+}
+ 
+.menu-header-container .menu {
+    display: flex;
+    justify-content: center; /* Aligns menu items in the center */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px; /* Spacing between menu items */
+}
+
+.menu-header-container .menu li {
+    display: inline-block;
+}
+
+.menu-header-container .menu a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    color: #000000;
+    font-weight: 700;
+    transition: 0.3s;
     text-transform: uppercase;
     letter-spacing: 0px;
-    text-decoration: none;
-  }
-  
-  .header-nav-menu a:hover,
-  .menu-header-container ul li a:hover,
-  .menu-header-container ul li.current-menu-item a {
-    color: var(--e-global-color-accent) !important;
-  }
-  
+}
+
+.menu-header-container .menu .current-menu-item a,
+.menu-header-container .menu a:hover {
+  color: var(--e-global-color-accent) !important;
+}
+
+/* Responsive: Stack items on mobile */
+@media (max-width: 768px) {
+  .menu-header-container .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
   
   
   /* Button Styles */
@@ -706,8 +725,7 @@ padding: 0px 20px!important;
   } 
   @media (min-width: 768px) {
     #page-top { 
-      margin-top: -150vh; 
-      width: 50vw; 
+      width: 100vw; 
       margin: -123px 0 123px 0;
       height: calc(100vh - 123px);
 
@@ -729,7 +747,7 @@ padding: 0px 20px!important;
     }
   }
   
-  #page-thumbnail { 
+  .page-thumbnail { 
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -737,6 +755,22 @@ padding: 0px 20px!important;
     background-size: cover;
     background-position: center;
     z-index: 9999;
+  }
+  @media (min-width: 768px) {
+    .page-thumbnail { 
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 9999;
+      border-top-left-radius: 20rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 20rem;
+      border: none;
+    }
   }
   
   

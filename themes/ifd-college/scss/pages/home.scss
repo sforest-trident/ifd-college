@@ -1,15 +1,5 @@
-
-
 #homepage.lms-courses-category-container{
     padding-bottom: 3rem;
-
-    .wp-block-heading{
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-    }
-}
-
-#homepage .wp-block-masterstudy-courses-categories-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -18,12 +8,18 @@
             justify-content: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    gap: 10px;
-  }
+
+    .wp-block-heading{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
   
   #homepage .lms-courses-category-list {
       align-items: center;
       max-width: unset;
+      gap: 20px;
   }
   
   #homepage .lms-courses-category-list__item {
@@ -39,7 +35,8 @@
     transition: top 0.3s ease-in-out; /* Smooth animation */
 
     @include breakpoint($md) {
-        padding: 10px 20px;
+        padding: 10px;
+        width: 180px
     }
   }
   
@@ -64,7 +61,7 @@
   }
   
   #homepage .lms-courses-category-list__item:hover {
-    //top: -40px; /* Move up */
+    top: -40px; /* Move up */
   }
   
   #homepage .lms-courses-category-list__item a span {

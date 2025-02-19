@@ -16,6 +16,7 @@ $page_button = get_post_meta(get_the_ID(), 'page_button', true);
         <div id="page-title">
             <?php echo !empty($page_title) ? '<h1>'.$page_title.'</h1>' : ''; ?>
             <?php echo !empty($page_sub_title) ? '<h2>'.esc_html($page_sub_title).'</h2>' : ''; ?>
+            <?php echo !empty($page_shortcode) ? "<?php do_shortcode('$page_shortcode'); ?>" : ''; ?>
             <?php echo !empty($page_button) ? $page_button : ''; ?>
         </div>
     </div>
