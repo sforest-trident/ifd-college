@@ -81,6 +81,7 @@
 
 // Pages
 @import "pages/home";
+@import "pages/courses";
 
 @import "_core/_core";
 
@@ -130,24 +131,45 @@ body {
 }
 
 .cf7-form label {
-  font-weight: bold;
   display: block;
   font-family: var(--e-global-typography-primary-font-family), Sans-serif;
-  font-size: 18px!important;
+  font-size: 16px!important;
   font-weight: 700!important;
   line-height: 31px!important;
   text-transform: uppercase;
+  padding: 0 20px;
 } 
+
+.cf7-form input::placeholder,
+.cf7-form textarea::placeholder {
+  color: #c0c0c0;
+  font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+  font-size: 16px!important;
+  font-weight: 300!important;
+  text-transform: uppercase;
+}
+
+.wpv-archive-pagination-nav-links, .wpv-archive-pagination-nav-links-container, .wpv-pagination-nav-links, .wpv-pagination-nav-links-container, .wpv-pagination-preview-element {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cf7-form input:focus::placeholder,
+.cf7-form textarea:focus::placeholder {
+  color: rgba(0,0,0,0)
+}
 
 .input-field {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
+  border-radius: 0px;
   background-color: #fff!important;
+  color: var(--e-global-color-accent)
 }
 
-.wpcf7 textarea {
+.cf7 textarea {
   background-color: #fff!important;
 }
 
@@ -164,6 +186,7 @@ body {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
+  margin: 0 auto;
 }
 
 .submit-button:hover {
@@ -303,15 +326,21 @@ margin-top: -100px;
 	transform: matrix(1, -0.09, 0.09, 1, 0, 0);
 }
 
+.large-pill {
+	border-radius:30%;
+	border: 1px solid #fff;
+	padding: 50px;
+	justify-content: center;
+  gap: 20px;
+  -webkit-box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
 
 .tickbox {
-    background-color: #1D3E07;
     border-radius: 100px;
-    padding: 10px;;
+    padding: 10px;
 }
-.tickbox .icon-container {
-    width: 15px!important;
-}
+
 .tickbox svg{
     fill: #ffffff;
 }
@@ -355,6 +384,13 @@ margin-top: -100px;
     font-weight: 300;
     line-height: 1.1em;
 }
+
+.course .tb-button__link {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+
 .course .tb-button__link,
 .news .tb-button__link {
     background-color: #50991F!important;
@@ -375,6 +411,55 @@ margin-top: -100px;
     
 }
 
+/* Style all pagination links */
+.wpv-pagination-nav-links-container {
+  display: flex; /* Align items in a row */
+  gap: 5px; /* Spacing between buttons */
+  list-style: none;
+  padding: 1em 0;
+}
+
+/* Default pagination items */
+.wpv-pagination-nav-links-item a,
+.page-item a,
+.page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  background-color: var(--e-global-color-accent);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 0px!important; /* Optional: rounded corners */
+}
+
+.wpv_pagination_dots li a {
+  background-image: unset;
+}
+
+/* Current page styling */
+.wpv-pagination-nav-links-item-current a,
+.active-dot a {
+  background-color: var(--e-global-color-primary);
+  color: #000;
+  font-weight: bold;
+  border: none;
+}
+
+/* Hover effect */
+.wpv-pagination-nav-links-item a:hover,
+.wpv-pagination-nav-links-container a.page-link:hover,
+.page-item a:hover,
+.page-link:hover {
+  background-color: var(--e-global-color-primary);
+  color: #000;
+}
+
+.pagination-dots>li>a.page-link {
+  border-radius: 0!important;
+}
 
   
 * {
@@ -479,13 +564,9 @@ margin-top: -100px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-
-    @include breakpoint($md) { 
-      width: 125px;
-    }
+    -webkit-box-pack: start!important;
+        -ms-flex-pack: start!important;
+            justify-content: flex-start!important;
   }
   
   #page-title .wp-block-button__link {
@@ -744,6 +825,7 @@ padding: 0px 20px!important;
               flex: 1;
       margin-right: 20px;
       margin-left: 400px;
+      max-width: 550px;
     }
   }
   
@@ -921,6 +1003,10 @@ padding: 0px 20px!important;
   .bg-c64abec {
     background-color: #6CC135;
   }
+
+  .bg-aae583 {
+    background-color: #AAE583;
+  }
   
   .text-primary {
     color: #1D3E07 !important;
@@ -932,6 +1018,10 @@ padding: 0px 20px!important;
   
   .text-text {
     color: #000 !important;
+  }
+
+  .text-white {
+    color: #fff !important;
   }
   
   .text-accent {

@@ -19,6 +19,7 @@
   #homepage .lms-courses-category-list {
       align-items: center;
       max-width: unset;
+      display: flex;
       gap: 20px;
   }
   
@@ -33,6 +34,7 @@
     position: relative; /* Required for 'top' to work */
     -webkit-transition: top 0.3s ease-in-out;
     transition: top 0.3s ease-in-out; /* Smooth animation */
+    align-content: center;
 
     @include breakpoint($md) {
         padding: 10px;

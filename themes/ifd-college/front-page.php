@@ -13,7 +13,7 @@ $page_button = get_post_meta(get_the_ID(), 'page_button', true);
     </div>
 
     <div id="page-top">
-        <div id="page-title">
+        <div id="page-title" style="max-width: 750px;">
             <?php echo !empty($page_title) ? '<h1>'.$page_title.'</h1>' : ''; ?>
             <?php echo !empty($page_sub_title) ? '<h2>'.esc_html($page_sub_title).'</h2>' : ''; ?>
             <?php echo !empty($page_shortcode) ? "<?php do_shortcode('$page_shortcode'); ?>" : ''; ?>
