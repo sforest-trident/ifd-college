@@ -9,7 +9,7 @@
     transition: background-color 0.5s ease-in-out;
     z-index: 99999;
 
-    padding: 1rem var(--e-global-sm-viewport_gutter-h);
+    padding: 1rem var(--e-global-sm-viewport_gutter-h) 0;
 }
 .header-widgets.scrolled {
     background-color: #f3f3f3;

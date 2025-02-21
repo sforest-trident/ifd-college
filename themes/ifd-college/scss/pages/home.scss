@@ -19,12 +19,27 @@
   #homepage .lms-courses-category-list {
       align-items: center;
       max-width: unset;
-      display: flex;
-      gap: 20px;
+      display: block;
+
+      @include breakpoint($md) {
+        display: flex;
+        gap: 20px;
+      }
+
   }
-  
+
+  #homepage .lms-courses-category-list button {
+    display: none;
+
+      @include breakpoint($md) {
+        display: block;
+        margin-top: 10px;
+      }
+  }
+
   #homepage .lms-courses-category-list__item {
     display: inline-block;
+    margin-bottom: 10px;
     padding: 20px;
     border: none;
     border-radius: 100px;
@@ -35,6 +50,7 @@
     -webkit-transition: top 0.3s ease-in-out;
     transition: top 0.3s ease-in-out; /* Smooth animation */
     align-content: center;
+    width: 100%;
 
     @include breakpoint($md) {
         padding: 10px;

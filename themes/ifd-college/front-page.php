@@ -7,8 +7,8 @@ $page_sub_title = get_post_meta(get_the_ID(), 'page_sub_title', true);
 $page_button = get_post_meta(get_the_ID(), 'page_button', true);
 ?>
 
-<div class="page-hero">
-    <div id="home-page-top">
+<div id="home-page-hero">
+    <div class="home-page-top">
         <div class="hero-feature-image" style="background-image: url('<?php echo $featured_img_url; ?>');"></div>
     </div>
 
