@@ -20,6 +20,13 @@ $page_button = get_post_meta(get_the_ID(), 'page_button', true);
             <?php echo !empty($page_button) ? $page_button : ''; ?>
         </div>
     </div>
+
+    <div class="container_mouse">
+        <span class="mouse-btn">
+            <span class="mouse-scroll"></span>
+        </span>
+        <span class="scroll-text">Scroll Down</span>
+    </div>
 </div>
 
 <div id="content">

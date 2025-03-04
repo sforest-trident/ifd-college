@@ -1,0 +1,43 @@
+$icon-width: 30px;
+$icon-height: ($icon-width * 2);
+$scroll-speed: 1.5s;
+$text-size: 12px;
+
+.mouse{
+    &-btn {
+        margin: 0 auto;
+        width: $icon-width;
+        height: $icon-height;
+        border: 3px solid rgba(122, 122, 124, 0.918);
+        border-radius: 20px;
+        display: flex;
+    }
+
+    &-scroll {
+        display: block;
+        width: ($icon-width / 2);
+        height: ($icon-width / 2);
+        background: linear-gradient(170deg, rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
+        border-radius: 50%;
+        margin: auto;
+        animation: scroller $scroll-speed linear infinite;
+      }
+  }
+  
+  .scroll{
+    &-text{
+        font-size: $text-size;
+    }
+  }
+  
+  @keyframes scroller {
+    0% {
+      opacity: 0;
+      transform: translateY(-($icon-height / 2));
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(($icon-width / 2));
+    }
+  }

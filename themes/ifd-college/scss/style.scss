@@ -77,6 +77,7 @@
 // Components
 @import "_components/_header.scss";
 @import "_components/_buttons.scss";
+@import "_components/_scroll-icon";
 @import "_components/_footer.scss";
 
 // Pages
@@ -809,6 +810,16 @@ margin-top: -100px;
     display: block;
     padding: 0px;
     margin: -100px 0 0 0;
+    position: relative;
+
+    .container_mouse{
+      position: absolute;
+      z-index: 10;
+      pointer-events: all;
+      bottom: 1rem;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   #home-page-hero .home-page-top {
@@ -976,8 +987,10 @@ padding: 0px 20px!important;
       border: none;
     }
 
+  }
 
-    @include breakpoint($xxl) {
+  @include breakpoint($xxl) {
+    .page-thumbnail { 
       border-radius: 30rem 0 0 30rem;
     }
   }
