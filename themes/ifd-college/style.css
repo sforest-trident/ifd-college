@@ -193,10 +193,8 @@ footer {
 }
 footer .footer-nav-menu a,
 footer .footer-widget a {
-  text-transform: uppercase;
   letter-spacing: 0px;
   color: white;
-  text-decoration: none;
 }
 footer .footer-nav-menu a:focus, footer .footer-nav-menu a:hover,
 footer .footer-widget a:focus,
@@ -239,6 +237,9 @@ footer .footer-widgets .footer-1 {
     gap: 1rem;
   }
 }
+footer .footer-widgets .footer-1 a {
+  text-decoration: underline !important;
+}
 footer .footer-widgets .footer-2 {
   font-size: 0.85rem;
   padding-bottom: 2rem;
@@ -264,6 +265,9 @@ footer .footer-widgets .footer-3 {
   footer .footer-widgets .footer-3 {
     display: block;
   }
+}
+footer .footer-widgets .footer-3 a {
+  text-transform: uppercase;
 }
 footer .footer-widget-area {
   -webkit-box-flex: 1;

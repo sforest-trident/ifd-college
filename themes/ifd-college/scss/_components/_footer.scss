@@ -9,10 +9,8 @@ footer {
 
 	.footer-nav-menu a,
 	.footer-widget a{
-		text-transform: uppercase;
 		letter-spacing: 0px;
 		color: white;
-		text-decoration: none;
 
 		&:focus,
 		&:hover{
@@ -45,6 +43,10 @@ footer {
 				flex-direction: column;
 				gap: 1rem;
 			}
+
+			a{
+				text-decoration: underline !important;
+			}
 		}
 
 		.footer-2{
@@ -70,6 +72,10 @@ footer {
 
 			@include breakpoint($md) {
 				display: block;
+			}
+
+			a{
+				text-transform: uppercase;
 			}
 		}
 	}
