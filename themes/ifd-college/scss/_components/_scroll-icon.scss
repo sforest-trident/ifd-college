@@ -1,5 +1,5 @@
 $icon-width: 30px;
-$icon-height: ($icon-width * 2);
+$icon-height: calc($icon-width * 2);
 $scroll-speed: 1.5s;
 $text-size: 12px;
 
@@ -15,8 +15,8 @@ $text-size: 12px;
 
     &-scroll {
         display: block;
-        width: ($icon-width / 2);
-        height: ($icon-width / 2);
+        width: calc($icon-width / 2);
+        height: calc($icon-width / 2);
         background: linear-gradient(170deg, rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
         border-radius: 50%;
         margin: auto;
@@ -33,11 +33,11 @@ $text-size: 12px;
   @keyframes scroller {
     0% {
       opacity: 0;
-      transform: translateY(-($icon-height / 2));
+      transform: translateY(-(calc($icon-height / 2)));
     }
   
     100% {
       opacity: 1;
-      transform: translateY(($icon-width / 2));
+      transform: translateY(calc($icon-width / 2));
     }
   }
