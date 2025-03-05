@@ -1,0 +1,49 @@
+.contact-block{
+    padding: 5rem 0;
+    
+    .col-wrapper{
+        .col{
+
+            &.col-content{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                flex-direction: column;
+
+                @include breakpoint($lg){
+                    align-items: center;
+                    padding-right: 2rem;
+                    
+                }
+
+                a{
+                    color:#fff;
+                    text-decoration: underline !important;
+                }
+            }
+
+            &.image-block{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+
+                @include breakpoint($lg){
+                    padding-left: 5em;
+                    align-items: unset;
+                }
+
+                img{
+                    border-radius: 50%;
+                    background: #fff;
+                    width: 12em;
+                    height: 12em;
+                    object-fit: contain;
+                    outline: 5px solid rgba(255,255,255, 0.5);
+                }
+            }
+        }
+    }
+}

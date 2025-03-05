@@ -319,6 +319,67 @@ footer .menu-footer-container ul li.current-menu-item a {
   color: #000000;
 }
 
+.contact-block {
+  padding: 5rem 0;
+}
+.contact-block .col-wrapper .col.col-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 993px) {
+  .contact-block .col-wrapper .col.col-content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 2rem;
+  }
+}
+.contact-block .col-wrapper .col.col-content a {
+  color: #fff;
+  text-decoration: underline !important;
+}
+.contact-block .col-wrapper .col.image-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (min-width: 993px) {
+  .contact-block .col-wrapper .col.image-block {
+    padding-left: 5em;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
+}
+.contact-block .col-wrapper .col.image-block img {
+  border-radius: 50%;
+  background: #fff;
+  width: 12em;
+  height: 12em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  outline: 5px solid rgba(255, 255, 255, 0.5);
+}
+
 #homepage.lms-courses-category-container {
   padding-bottom: 3rem;
   display: -webkit-box;
