@@ -1042,7 +1042,8 @@ padding: 0px 20px!important;
     justify-content: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 0px;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 .courses-category-list {
     -webkit-box-align: center;
@@ -1051,7 +1052,11 @@ padding: 0px 20px!important;
 }
 
   .courses-category-list__item {
-    padding: 20px 30px!important;
+    padding: 20px 20px!important;
+    background-color: #46861D !important;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
   }
   .courses-category-list__item a {
     color: #fff!important;
@@ -1061,8 +1066,7 @@ padding: 0px 20px!important;
   }
   .courses-category-list__item:nth-child(1) {
     background-color: #80D649 !important;
-    border-radius: 50px 0 0 50px!important;
-    padding-left: 40px!important;
+    padding-left: 20px!important;
   }
   .courses-category-list__item:nth-child(2) {
     background-color: #6CC136 !important;
@@ -1071,23 +1075,45 @@ padding: 0px 20px!important;
     background-color: #539B25 !important;
   }
   .courses-category-list__item:nth-child(4) {
-    background-color: #46861D !important;
+    background-color: #46861D !important; 
   }
   .courses-category-list__item:nth-child(5) {
     background-color: #386C17 !important;
   }
   .courses-category-list__item:nth-child(6) {
     background-color: #1D3E07 !important;
-    border-radius: 0 50px 50px 0 !important;
-    padding-right: 40px!important;
   }
   .courses-category-list__item:nth-child(7) {
-    background-color: #227AFF !important;
-    margin-left: 20px;
-    border-radius: 50px!important;
+    background-color: #386C17 !important;
   }
+  .courses-category-list__item:last-of-type {
+    background-color: #227AFF !important;
+  }
+
+  @include breakpoint($lg) {
+    .courses-category-list {
+      gap: unset;
+    }
+
+    .courses-category-list__item{
+      width: unset;
+      border-radius: unset;
+    }
   
-  
+    .courses-category-list__item:nth-child(1) {
+      border-radius: 50px 0 0 50px!important;
+      padding-left: 20px!important;
+    }
+
+    .courses-category-list__item:nth-child(7) {
+      border-radius: 0 50px 50px 0 !important;
+      padding-right: 40px!important;
+    }
+    .courses-category-list__item:last-of-type {
+      border-radius: 50px!important;
+      margin-top: 2rem;
+    }
+  }
   
   #news {
     background-color: #1D3E07;

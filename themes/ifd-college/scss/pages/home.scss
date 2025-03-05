@@ -36,7 +36,7 @@
         margin-top: 10px;
       }
   }
-
+  
   #homepage .lms-courses-category-list__item {
     display: inline-block;
     margin-bottom: 10px;
@@ -51,10 +51,15 @@
     transition: top 0.3s ease-in-out; /* Smooth animation */
     align-content: center;
     width: 100%;
+    background-color: #666;
 
     @include breakpoint($md) {
         padding: 10px;
         width: 180px
+    }
+
+    @include breakpoint($md) {
+      height: 400px;
     }
   }
   
@@ -138,12 +143,19 @@
         height: 676px;
     }
   }
-  
+
   #homepage .lms-courses-category-list__item:nth-child(6) {
-    background-color: #227AFF !important;
+    background-color: #46861D !important;
+
     @include breakpoint($md) {
         height: 609px;
-        margin-left: 20px;
+    }
+  }
+  
+  #homepage .lms-courses-category-list__item:last-of-type {
+    background-color: #227AFF !important;
+    @include breakpoint($md) {
+        height: 528px;
     }
   }
   
