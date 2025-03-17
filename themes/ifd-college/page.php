@@ -14,7 +14,14 @@ $page_shortcode= get_post_meta(get_the_ID(), 'page_shortcode', true);
             <?php echo !empty($page_shortcode) ? do_shortcode($page_shortcode) : ''; ?>
             <?php echo !empty($page_button) ? $page_button : ''; ?>
     </div>
+	<div class="container_mouse">
+        <span class="mouse-btn">
+            <span class="mouse-scroll"></span>
+        </span>
+        <span class="scroll-text">Scroll Down</span>
+    </div>
     <div id="page-thumbnail"><img src="<?php echo $featured_img_url; ?>" alt="<?php the_title(); ?>" class="page-thumbnail" /></div>
+	
 </div>
 
 <div id="content">

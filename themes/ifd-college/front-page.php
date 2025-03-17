@@ -8,12 +8,14 @@ $page_button = get_post_meta(get_the_ID(), 'page_button', true);
 ?>
 
 <div id="home-page-hero">
+
     <div class="home-page-top">
         <div class="hero-feature-image" style="background-image: url('<?php echo $featured_img_url; ?>');"></div>
     </div>
-
+	
     <div id="page-top">
         <div id="page-title" style="max-width: 750px;">
+			<img src="https://dev.tmuk.uk/ifd/wp-content/uploads/2025/02/ifdc-logo-x2.png" alt="IFD College" />
             <?php echo !empty($page_title) ? '<h1>'.$page_title.'</h1>' : ''; ?>
             <?php echo !empty($page_sub_title) ? '<h2>'.esc_html($page_sub_title).'</h2>' : ''; ?>
             <?php echo !empty($page_shortcode) ? "<?php do_shortcode('$page_shortcode'); ?>" : ''; ?>

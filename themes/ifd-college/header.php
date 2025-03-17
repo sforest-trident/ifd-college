@@ -7,12 +7,24 @@
     <?php wp_head() ?>
 </head>
 <body>
-
-
-<header class="header-widgets">
+	
+<?php if (is_front_page()) { ?>
+    <header class="header-widgets">
+    <div class="home-header-widget-area">
+        <?php if (is_active_sidebar('header-home')) : ?>
+            <?php dynamic_sidebar('header-home'); ?>
+        <?php endif; ?>
+    </div>
+</header>
+	
+<?php } else { ?>
+	
+	<header class="header-widgets">
     <div class="header-widget-area">
         <?php if (is_active_sidebar('header-1')) : ?>
             <?php dynamic_sidebar('header-1'); ?>
         <?php endif; ?>
     </div>
 </header>
+	
+<?php } ?>
