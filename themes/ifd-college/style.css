@@ -164,6 +164,9 @@ button {
   }
 }
 
+:root{
+  
+}
 .mouse-btn {
   margin: 0 auto;
   width: 30px;
@@ -181,37 +184,25 @@ button {
   background: linear-gradient(170deg, rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
   border-radius: 50%;
   margin: auto;
-  -webkit-animation: scroller 1.5s linear infinite;
-          animation: scroller 1.5s linear infinite;
+  animation: scroller 2s linear infinite;
 }
 
 .scroll-text {
   font-size: 12px;
 }
 
-@-webkit-keyframes scroller {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(15px);
-            transform: translateY(15px);
-  }
-}
-
 @keyframes scroller {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
   }
   100% {
-    opacity: 1;
-    -webkit-transform: translateY(15px);
-            transform: translateY(15px);
+    opacity: 0;
+    transform: translateY(30px);
   }
 }
 
@@ -1570,49 +1561,7 @@ footer .menu-footer-container ul li.current-menu-item a {
           align-items: center !important;
 }
 
-/* -- Uncomment as required --
-.sm {
-	@include breakpoint($md-down) {
-		@include _all-paddings('-');
-		@include _all-margins('-');
 
-		@include _display-helpers('-');
-		@include _flex-helpers('-');
-		@include _content-helper-classes('-');
-	}
-
-	@include custom-offsets('sm');
-}
-*/
-/* -- Uncomment as required --
-.md {
-	@include breakpoint($md) {
-		@include _all-paddings('-');
-		@include _all-margins('-');
-
-		@include _display-helpers('-');
-		@include _flex-helpers('-');
-	}
-
-	@include custom-offsets('md');
-}
-*/
-/* -- Uncomment as required --
-.lg {
-	@include breakpoint($lg) {
-		@include _all-paddings('-');
-		@include _all-margins('-');
-
-		@include _display-helpers('-');
-		@include _flex-helpers('-');
-	}
-}
-*/
-/* -- Uncomment as required --
-.xxl {
-	@include custom-offsets('xxl');
-}
-*/
 ul {
   margin: unset;
   padding: unset;
@@ -2017,15 +1966,27 @@ body {
 }
 
 .large-pill {
-  border-radius: 30%;
+  border-radius: 100px;
   border: 1px solid #fff;
-  padding: 50px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 70px 60px;
+  justify-content: center;
   gap: 20px;
-  -webkit-box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+
+  .lp--list-item{
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 0.25rem;
+
+    &:last-of-type{
+      margin-bottom: unset;
+    }
+
+    & p{
+      padding-top: 1rem;
+    }
+  }
+
+  
 }
 
 .tickbox {
@@ -2040,12 +2001,21 @@ body {
 .bundle,
 .course,
 .news {
+  position: relative;
   background-color: #FFFFFF;
   border: 1px solid #54595F;
   padding: 0px !important;
   margin: 0px !important;
+  transition: all 0.3s ease;
   -webkit-box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
           box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.bundle:hover{
+  transform: scale(1.045);
+  position: relative;
+  z-index: 999;
+  transition: all 0.3s ease;
 }
 
 ul.wp-block-list.ticks {
@@ -2939,6 +2909,16 @@ button {
 
 .courses-category-list__item:nth-child(7) {
   background-color: #386C17 !important;
+}
+
+.courses-category-list__item:nth-last-child(2) {
+  border-radius: 0 50px 50px 0 !important;
+}
+
+@media (min-width: 993px) {
+  .courses-category-list__item:nth-last-child(2) {
+    margin-right: 1rem;
+  }
 }
 
 .courses-category-list__item:last-of-type {
@@ -4314,5 +4294,181 @@ ul {
 @media (min-width: 768px) {
   .section__socials {
     padding: 100px 0;
+  }
+}
+
+section.bg-accent{
+  .wp-block-button__link{
+    background-color: var(--e-global-color-primary);
+    color: #fff;
+
+    &:hover{
+      background-color: white;
+      color: var(--e-global-color-primary)
+    }
+  }
+
+  .secondary-header{
+    color: var(--e-global-color-primary);
+  }
+}
+
+/* MasterStudy LMS Plugin stuff -- */
+.tb-container .tb-image img{
+  contain-intrinsic-size: unset;
+  height: 30vw;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Hide instuctor from course page */
+.masterstudy-single-course-modern__info-block:nth-child(1), /* Hide instructor */
+.masterstudy-single-course-modern__info-block:nth-child(3){ /* Hide enrolled */
+  display: none !important;
+}
+
+/* Cool Timeline custom css */
+.section__the-procedure{
+
+  & >.wp-block-group__inner-container:first-of-type{
+    padding: 0 2rem;
+  }
+
+  .wp-block-columns{
+    flex-direction: column;
+    flex-wrap: unset !important;
+  }
+
+  .ctl-title{
+    display: none;
+  }
+
+  .ctl-horizontal-timeline{
+    width: 100% !important;
+    margin: unset;
+  }
+}
+
+.pw--level-block{
+  --pw-pill-width: 15rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 100%;
+  justify-content: flex-end;
+
+  .pw--level-item{
+    background-color: #27500C;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    border-radius: 5rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    &:nth-child(1){
+      background-color: #80C354;
+    }
+    &:nth-child(2){
+      background-color: #386C17;
+    }
+
+    .wp-block-heading{
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      background-color: #1D3E07;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      display: inline-block;
+    }
+
+    .inner{
+      width: 100%;
+    }
+  }
+}
+
+
+@media (min-width: 782px) {
+  .section__the-procedure{
+    .wp-block-columns{
+      flex-direction: column !important;
+      flex-wrap: unset !important;
+    }
+
+    .pw--level-block{
+      flex-direction: row;
+  
+      .pw--level-item{
+        flex-direction: column;
+        flex: 0 0 auto;
+        border-radius: var(--pw-pill-width);
+        width: var(--pw-pill-width);
+        padding: 8rem 2rem;
+  
+        &:nth-child(1){
+          margin: 4rem 0;
+          padding: 4rem 2rem;
+        }
+        &:nth-child(2){
+          margin: 2rem 0;
+          padding: 4rem 2rem;
+        }
+  
+        .inner{
+          height: 100%;
+          width: 100%;
+  
+          .wp-block-group__inner-container:first-of-type{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+        }
+  
+        .wp-block-heading{
+          padding: 0.5rem;
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .section__the-procedure{
+
+    .pw--level-block{
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    .brochure-block{
+      display: none;
+    }
+  }
+}
+
+/* Un-stacking point for the procedure section */
+@media (min-width: 1280px) {
+  .section__the-procedure{
+    .wp-block-columns{
+      flex-direction: row !important;
+    }
+  }
+
+  .pw--content-block{
+    height: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+
+    .wp-block-group__inner-container:first-of-type{
+      justify-content: center;
+    }
   }
 }
