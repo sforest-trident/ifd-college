@@ -1,24 +1,22 @@
 (function(){
     const header = document.querySelector(".header-widgets");
-    const logo = document.querySelector(".header-widget img");
     const screenTogglePoint = 20;
     const stickyHeaderClassName = 'scrolled';
-    const smallLogoClass = 'logo-small';
 
-    // Function to toggle header styles
-    function toggleHeader() {
-        if (window.scrollY > screenTogglePoint) {
+    // If top is offset on page load, make header sticky.
+    window.onload = function () {
+        if (this.window.scrollY > screenTogglePoint){
             header.classList.add(stickyHeaderClassName);
-            logo.classList.add(smallLogoClass);
-        } else {
-            header.classList.remove(stickyHeaderClassName);
-            logo.classList.remove(smallLogoClass);
         }
     }
 
-    // Run on load
-    window.onload = toggleHeader;
-
-    // Monitor scroll activity
-    window.addEventListener("scroll", toggleHeader);
+    // Monitor scroll activity to toggle sticky header as necessary.
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > screenTogglePoint) { // Adjust threshold as needed
+            header.classList.add(stickyHeaderClassName);
+        } else {
+            header.classList.remove(stickyHeaderClassName);
+        }
+        
+    });
 })();
