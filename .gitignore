@@ -5,8 +5,7 @@ themes/twentytwentyfive/*
 /plugins/*
 /languages/*
 /maintenance/*
+/updraft/*
 /backups-dup-lite/*
 /uploads
 .vscode/settings.json
-updraft/index.html
-updraft/.htaccess
