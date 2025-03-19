@@ -8,3 +8,5 @@ themes/twentytwentyfive/*
 /backups-dup-lite/*
 /uploads
 .vscode/settings.json
+updraft/index.html
+updraft/.htaccess
