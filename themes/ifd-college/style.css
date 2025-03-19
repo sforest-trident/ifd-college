@@ -1613,6 +1613,11 @@ body {
   background-color: #f3f3f3;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+
+  img{
+    width: 80px!important;
+    height: auto; /* Maintains aspect ratio */
+  }
 }
 
 .home-header-widget-area {
