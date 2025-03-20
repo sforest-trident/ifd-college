@@ -6,8 +6,7 @@
     
     <?php wp_head() ?>
 </head>
-<body>
-	
+<body class="<?php echo ('page_'.$post->post_name); ?>">
 <?php if (is_front_page()) { ?>
     <header class="header-widgets">
     <div class="home-header-widget-area">
