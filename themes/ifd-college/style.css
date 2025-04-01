@@ -2201,6 +2201,7 @@ ul.wp-block-list.ticks li::before {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+	margin-bottom: 5px!important;
 }
 
 .bundle .header {
@@ -2233,7 +2234,7 @@ ul.wp-block-list.ticks li::before {
 
 .bundle .tb-button__link,
 .course .tb-button__link {
-  width: inherit;
+  max-width: 200px!important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4895,29 +4896,11 @@ body:not(.page.home){
     .tb-image{
       display: flex;
       flex-direction: column;
-      width: 50rem;
+      width: 40rem;
     }
 
-    .tb-container{
-      @media(min-width: 768px){
-        height: 30rem;
-        overflow: hidden;
-        width: 100%;
-      }
-
-      .tb-container{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-
-        .js-wpv-view-layout{
-          height: 100%;
-          overflow-y: auto;
-        }
-      }
     }
-  }
+  
 
   .bundle-table__item-wrapper{
     display: flex;

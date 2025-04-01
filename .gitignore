@@ -10,3 +10,7 @@ themes/twentytwentyfive/*
 /uploads
 .vscode/settings.json
 themes/ifd-college/access.log.12.3
+debug.log
+wf-licensing.log
+ai1wm-backups/*
+themes/ms-lms-starter-theme/*
