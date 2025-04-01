@@ -11,7 +11,10 @@ function register_my_menus() {
         array(
 			'home-header' => __('Home Menu'),
             'header' => __('Header Menu'),
-            'footer' => __('Footer Menu')
+            'footer' => __('Footer Menu'),
+            'user-login' => __('Log In Menu'),
+            'user-menu' => __('User Menu')
+
         )
     );
 }
