@@ -37,10 +37,12 @@
             menuWrapper.classList.remove("visible");
             hamburger.classList.remove('active');
             body.classList.remove('nav-ui-lock');
+            header.classList.remove('full-height');
         } else {
             menuWrapper.classList.add("visible");
             hamburger.classList.add('active');
             body.classList.add('nav-ui-lock');
+            header.classList.add('full-height');
         }
         
     }

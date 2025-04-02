@@ -75,6 +75,12 @@ h1 {
 	  text-transform: uppercase;
 	}
 	#page-title img {
+		margin: 100px 0 50px 0 !important;
+	}
+}
+
+@media (min-width: 997px) {
+  #page-title img {
 		margin: 100px 0 50px 300px !important;
 	}
 }
@@ -278,7 +284,9 @@ button {
 
   &.active{
     transition: all ease 0.2s;
-    position: relative;
+    position: absolute;
+    top: 25px;
+    right: 15px;
     z-index: 9999;
 
     .icon__hamburger{
@@ -316,7 +324,7 @@ footer {
   background-color: var(--e-global-color-accent);
   width: 100% !important;
   margin: 0px !important;
-  padding: 50px 0 0 0 !important;
+  padding: 50px 20px 0 !important;
   /* Footer Menu */
 }
 footer .footer-nav-menu a,
@@ -341,6 +349,7 @@ footer .footer-widgets {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 0px;
+  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
   font-family: var(--e-global-typography-text-font-family);
@@ -508,7 +517,7 @@ footer .menu-footer-container ul li.current-menu-item a {
   outline: 5px solid rgba(255, 255, 255, 0.5);
 }
 
-#homepage.lms-courses-category-container {
+#homepage .lms-courses-category-container {
   padding-bottom: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -518,8 +527,13 @@ footer .menu-footer-container ul li.current-menu-item a {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+
+  @media(min-width:768px){
+    padding: 0 1rem;
+  }
+
 }
-#homepage.lms-courses-category-container .wp-block-heading {
+#homepage .lms-courses-category-container .wp-block-heading {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
@@ -531,7 +545,7 @@ footer .menu-footer-container ul li.current-menu-item a {
   max-width: unset;
   display: block;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -543,7 +557,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list button {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list button {
     display: block;
     margin-top: 10px;
@@ -567,13 +581,13 @@ footer .menu-footer-container ul li.current-menu-item a {
   width: 100%;
   background-color: #666;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item {
     padding: 10px;
     width: 180px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item {
     height: 400px;
   }
@@ -594,15 +608,15 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item a .lms-btn {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item a .lms-btn {
     display: block;
     margin-top: 10px;
   }
-}
 
-#homepage .lms-courses-category-list__item:hover {
-  top: -40px; /* Move up */
+  #homepage .lms-courses-category-list__item:hover {
+    top: -40px; /* Move up */
+  }
 }
 
 #homepage .lms-courses-category-list__item a span {
@@ -624,7 +638,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item:nth-child(1) {
   background-color: #80D649 !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item:nth-child(1) {
     height: 400px;
   }
@@ -633,7 +647,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item:nth-child(2) {
   background-color: #6CC136 !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item:nth-child(2) {
     height: 469px;
   }
@@ -642,7 +656,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item:nth-child(3) {
   background-color: #539B25 !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item:nth-child(3) {
     height: 538px;
   }
@@ -651,7 +665,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item:nth-child(4) {
   background-color: #46861D !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item:nth-child(4) {
     height: 609px;
   }
@@ -660,7 +674,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item:nth-child(5) {
   background-color: #386C17 !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item:nth-child(5) {
     height: 676px;
   }
@@ -669,7 +683,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item:nth-child(6) {
   background-color: #46861D !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item:nth-child(6) {
     height: 609px;
   }
@@ -678,7 +692,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 #homepage .lms-courses-category-list__item:last-of-type {
   background-color: #227AFF !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 997px) {
   #homepage .lms-courses-category-list__item:last-of-type {
     height: 528px;
   }
@@ -1696,6 +1710,10 @@ body {
   gap: 1rem;
   overflow-x: auto;
   background-color: var(--e-body-bg-color);
+
+  &.full-height{
+    height: 100vh;
+  }
 }
 
 .header-widgets.scrolled {
@@ -2694,7 +2712,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0px;
 
-  @media(max-width:786px) {
+  @media(max-width:768px) {
     color:white;
 
     &:hover{
@@ -2889,13 +2907,19 @@ button {
   opacity: 0.3;
   top: -60px;
 }
+
 @media (min-width: 768px) {
   #home-page-hero .hero-feature-image {
     display: block;
     height: 120vh;
-    right: 70px;
+    right: 40px;
     background-position: center right;
     opacity: 1;
+  }
+}
+@media (min-width: 997px) {
+  #home-page-hero .hero-feature-image {
+    right: 70px;
   }
 }
 @media (min-width: 1919px) {
@@ -2957,6 +2981,13 @@ button {
   }
 }
 @media (min-width: 768px) {
+  #home-page-hero #page-top {
+    width: 50vw;
+    margin: -90vh 0 0 40px;
+    height: calc(100vh - 123px);
+  }
+}
+@media (min-width: 997px) {
   #home-page-hero #page-top {
     width: 60vw;
     margin: -90vh 0 0 100px;
@@ -4667,7 +4698,11 @@ section.bg-accent{
 }
 
 .pw--level-block{
-  --pw-pill-width: 15rem;
+  --pw-pill-width: 12rem;
+
+  @media(min-width: 1380px) {
+    --pw-pill-width: 13rem;
+  }
 
   display: flex;
   flex-direction: column;
@@ -4686,16 +4721,25 @@ section.bg-accent{
     width: 100%;
 
     &:nth-child(1){
-      background-color: #80C354;
+      background-color: rgb(128, 214, 73);
     }
     &:nth-child(2){
+      background-color: #80C354;
+    }
+    &:nth-child(3){
+      background-color: rgb(70, 134, 29);
+    }
+    &:nth-child(4){
       background-color: #386C17;
+    }
+    &:last-of-type{
+      background-color: rgb(34, 122, 255) !important;
     }
 
     .wp-block-heading{
       font-size: 1.25rem;
       text-transform: uppercase;
-      background-color: #1D3E07;
+      background-color: rgba(0,0,0,0.35);
       padding: 0.5rem 1rem;
       border-radius: 1rem;
       display: inline-block;
@@ -4707,8 +4751,20 @@ section.bg-accent{
   }
 }
 
+@media (min-width: 997px) {
+  .section__the-procedure{
+  }
 
-@media (min-width: 782px) {
+  .pw--level-block{
+    flex-direction: row;
+
+    .pw--level-item{
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
   .section__the-procedure{
     .wp-block-columns{
       flex-direction: column !important;
@@ -4726,12 +4782,20 @@ section.bg-accent{
         padding: 8rem 2rem;
   
         &:nth-child(1){
-          margin: 4rem 0;
-          padding: 4rem 2rem;
+          margin: 6rem 0;
+          padding: 3rem 2rem;
         }
         &:nth-child(2){
           margin: 2rem 0;
-          padding: 4rem 2rem;
+          padding: 2rem 2rem;
+        }
+        &:nth-child(3){
+          margin: 0rem 0;
+          padding: 9rem 2rem;
+        }
+        &:last-of-type{
+          padding: 6rem 2rem;
+          margin: 4rem 0px;
         }
   
         .inner{
@@ -5166,6 +5230,20 @@ body:not(.page.home){
       background-color: #fff;
     }
   }
+}
+
+
+.section_meet-the-team{
+  .wp-block-toolset-views-view-template-block{
+    &:last-of-type{
+      margin-top: 2rem;
+    }
+  }
+}
+
+.mtt--row{
+  display: inline-flex;
+  gap: 0.25rem;
 }
 
 
