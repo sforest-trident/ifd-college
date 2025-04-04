@@ -16,13 +16,28 @@
 /* Global Font Variables */
 @import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 :root {
+  /* Colour Palette */
+  --e-global-palette-1: #80D649; /* Lightest Green */
+  --e-global-palette-2: #6CC136; /* Light Green */
+  --e-global-palette-3: #539B25; /* Green */
+  --e-global-palette-4: #46861D; /* Mid Green */
+  --e-global-palette-5: #386C17; /* Darkest Green. */
+  --e-global-palette-6: #227AFF; /* Blue */
+
+  --e-global-palette-7: #50991F; /* Another Green */
+
+  /* Common reference points */
   --e-body-bg-color: #f3f3f3;
-  --e-global-color-primary: #1D3E07;
+  --e-global-color-primary: var(--e-global-palette-2);
   --e-global-color-secondary: #54595F;
   --e-global-color-text: #000;
-  --e-global-color-accent: #50991F;
+  --e-global-color-accent: var(--e-global-palette-5);
   --e-global-color-white: white;
   --e-global-color-c64abec: #6CC135;
+
+  
+  
+
   --e-global-typography-primary-font-family:Nunito;
   --e-global-typography-primary-font-weight: 600;
   --e-global-typography-secondary-font-family: "Nunito";
@@ -321,7 +336,7 @@ button {
 
 /* Footer Widgets */
 footer {
-  background-color: var(--e-global-color-accent);
+  background-color: var(--e-global-palette-7);
   width: 100% !important;
   margin: 0px !important;
   padding: 50px 20px 0 !important;
@@ -338,7 +353,6 @@ footer .footer-widget a:hover {
   text-decoration: underline;
 }
 footer .footer-widgets {
-  background-color: var(--e-global-color-accent);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -722,7 +736,7 @@ footer .menu-footer-container ul li.current-menu-item a {
 }
 
 .masterstudy-single-course-modern__topbar::before {
-  background: var(--e-global-color-primary) !important;
+  background: var(--e-global-palette-5) !important;
 }
 
 .bg-primary {
@@ -745,6 +759,27 @@ footer .menu-footer-container ul li.current-menu-item a {
   background-color: #6CC135;
 }
 
+
+.bg-pallette-1{
+  background-color: var(--e-global-palette-1);
+}
+.bg-pallette-2{
+  background-color: var(--e-global-palette-2);
+}
+.bg-pallette-3{
+  background-color: var(--e-global-palette-3);
+}
+.bg-pallette-4{
+  background-color: var(--e-global-palette-4);
+}
+.bg-pallette-5{
+  background-color: var(--e-global-palette-5);
+}
+.bg-pallette-6{
+  background-color: var(--e-global-palette-6);
+}
+
+
 .text-primary {
   color: #1D3E07 !important;
 }
@@ -763,6 +798,25 @@ footer .menu-footer-container ul li.current-menu-item a {
 
 .text-c64abec {
   color: #6CC135 !important;
+}
+
+.text-pallette-1{
+  color: var(--e-global-palette-1);
+}
+.text-pallette-2{
+  color: var(--e-global-palette-2);
+}
+.text-pallette-3{
+  color: var(--e-global-palette-3);
+}
+.text-pallette-4{
+  color: var(--e-global-palette-4);
+}
+.text-pallette-5{
+  color: var(--e-global-palette-5);
+}
+.text-pallette-6{
+  color: var(--e-global-palette-6);
 }
 
 .stroke-primary {
@@ -2042,6 +2096,36 @@ body {
   margin-top: 120px !important;
 }
 
+/* Cooltime as page section */ 
+.section--timeline{
+
+  &.section__green{
+
+    .ctl-timeline-container{
+      .ctl-labels{
+        
+        .ctl-label-big{
+          color: var(--e-global-palette-2) !important;
+        }
+      }
+
+      .ctl-icondot{
+        background-color: var(--e-global-palette-3) !important;
+      }
+
+      .ctl-content{
+        .ctl-title{
+          color: var(--e-global-palette-1) !important;
+        }
+
+        .ctl-description{
+          color: var(--e-body-bg-color) !important;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 769px) {
   .ctl-wrapper .ctl-vertical-wrapper.ctl-one-sided .ctl-story {
     width: 100% !important;
@@ -3254,7 +3338,6 @@ button {
 
     &:nth-child(7) {
       border-radius: 0 50px 50px 0 !important;
-      padding-right: 40px !important;
     }
 
     &:last-of-type {
@@ -4721,19 +4804,19 @@ section.bg-accent{
     width: 100%;
 
     &:nth-child(1){
-      background-color: rgb(128, 214, 73);
+      background-color: var(--e-global-palette-1);
     }
     &:nth-child(2){
-      background-color: #80C354;
+      background-color: var(--e-global-palette-2);
     }
     &:nth-child(3){
-      background-color: rgb(70, 134, 29);
+      background-color: var(--e-global-palette-3);
     }
     &:nth-child(4){
-      background-color: #386C17;
+      background-color: var(--e-global-palette-4);
     }
     &:last-of-type{
-      background-color: rgb(34, 122, 255) !important;
+      background-color: var(--e-global-palette-6);
     }
 
     .wp-block-heading{
@@ -5076,7 +5159,7 @@ body:not(.page.home){
   }
 
   .stm_lms_course__title{
-    color: var(--e-global-color-primary);
+    color: var(--e-global-palette-5);
   }
 
   .stm_lms_teachers{
@@ -5113,7 +5196,7 @@ body:not(.page.home){
     }
 
     .masterstudy-popular-courses__item-title{
-      color: var(--e-global-color-accent);
+      color: var(--e-global-color-primary);
     }
   }
 
@@ -5133,7 +5216,7 @@ body:not(.page.home){
       bottom: 0;
       left: -2000px;
       right: -2000px;
-      background: var(--e-global-color-primary);
+      background: var(--e-global-palette-5);
       z-index: -1;
     }
 
