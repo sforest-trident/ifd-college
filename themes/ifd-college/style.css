@@ -2096,6 +2096,41 @@ body {
   margin-top: 120px !important;
 }
 
+
+.team-photo-grid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 10px;
+
+  .team-member{
+    width: 140px;
+    height: 225px;
+    border-radius: 100px !important;
+    background-color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+
+    &:nth-of-type(2), 
+    &:nth-of-type(5), 
+    &:nth-of-type(8), 
+    &:nth-of-type(11){
+      margin-top: -100px;
+    }
+    
+    img{
+      padding: 45px 0px 0px 0px;
+      margin: 0px;
+      border: 0px solid rgba(0, 0, 0, 1);
+      height: 225px;
+      max-width: unset !important;
+      max-height: unset !important;
+      min-height: 225px;
+      min-width: 100%;
+    }
+  }
+}
+
 /* Cooltime as page section */ 
 .section--timeline{
 
@@ -5331,4 +5366,31 @@ body:not(.page.home){
 
 
 
+.user-item-list{
+  .user-item{
+    margin-bottom: 1.75rem;
 
+    .user-title{
+      font-weight: bold;
+      line-height: 1.15rem;
+      text-transform: uppercase;
+      color: var(--e-global-palette-4);
+    }
+
+    .user-position{
+      font-size: 1.15rem;
+    }
+
+    .user-email{
+      display: flex;
+
+      a{
+        margin-top: 0.25rem;
+        color: var(--e-global-color-text);
+        text-decoration: underline !important;
+        font-size: 0.95rem;
+        line-height: 1rem;
+      }
+    }
+  }
+}
