@@ -104,28 +104,36 @@ add_theme_support( 'editor-color-palette', array(
     ),
 ) );
 
-function shortcode_user_profile_image_original( $atts ) {
-    // Parse shortcode attributes
-    $atts = shortcode_atts( array(
-        'user_id' => get_current_user_id(), // fallback to current user
-        'meta_key' => 'profile_image', // change this if your meta key is different
-    ), $atts );
+function shortcode_get_user_image( $atts ) {
+    
+    $atts = shortcode_atts([
+        'user_id' => null // Default to null if not provided.
+    ], $atts);
+    
+    // Catch user ID from shortcode attributes so we can query for the image.
+    $user_id = $atts['user_id'];
 
-    // Get the attachment ID from user meta
-    $attachment_id = get_user_meta( $atts['user_id'], $atts['meta_key'], true );
 
-    if ( ! $attachment_id ) {
-        return ''; // Exit if no attachment found
+  	// Query for the image in ACF.
+    $display_image = get_field('display_image', 'user_' . $user_id);
+
+  	// Case 1:
+    // If ACF image is set and is an array (image field type)
+    if (is_array($display_image) && !empty($display_image['url'])) {
+        $image_url = $display_image['url'];
+        $alt = $display_image['alt'];
+        return '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($alt) . '">';
     }
 
-    // Get the original image URL (full size)
-    $image_url = wp_get_attachment_image_url( $attachment_id, 'full' );
+  	// Case 2:
+    // Fallback: use the o.g Gravatar default placeholder (not a user-uploaded one)
+    $user = get_userdata($user_id);
+    $email = $user ? $user->user_email : '';
+    $default = 'mp'; // Mystery person placeholder
+    $size = 140; 
 
-    if ( ! $image_url ) {
-        return '';
-    }
+    $gravatar_url = 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($email))) . '?s=' . $size . '&d=' . $default;
 
-    // Return the image tag
-    return '<img src="' . esc_url( $image_url ) . '" alt="User Profile Image" />';
+    return '<img src="' . esc_url($gravatar_url) . '" class="gravatar" alt="">';
 }
-add_shortcode( 'user_profile_image_original', 'shortcode_user_profile_image_original' );
+add_shortcode( 'get_user_image', 'shortcode_get_user_image' );
